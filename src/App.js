@@ -14,6 +14,7 @@ import MainDisplay from './Layout/MainDisplay';
 import { connect } from 'react-redux';
 import LeftDrawerMenu from './Layout/LeftDrawerMenu';
 
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({

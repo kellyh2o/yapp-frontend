@@ -28,6 +28,17 @@ const rootReducer = (state=initState, action) => {
       }
     }
 
+    case 'FETCH_USER_FULFILLED': 
+      return {
+        ...state,
+        [action.payload.login]: action.payload
+      }
+
+    // case 'PING':
+    //   return { isPinging: true};
+    // case 'PONG':
+    //   return { isPinging: false};
+
     default: {
       return state;
     }

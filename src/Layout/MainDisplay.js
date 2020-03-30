@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Dashboard from "../Dashboard/Components/Dashboard";
-import UserProfile from "../UserProfile/Components/UserProfile";
+import UserProfile from "../Users/Components/UserProfile";
 import Settings from "../Settings/Components/Settings";
 
 

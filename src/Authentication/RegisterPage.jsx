@@ -95,9 +95,7 @@ const RegisterPage = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        isDashboardSelected: state.selectedView === "Dashboard",
-        isUserProfileSelected: state.selectedView === "UserProfile",
-        isSettingsSelected: state.selectedView === "Settings",
+        isNewRegistrationSuccess: state.isNewRegistrationSuccess
     };
 }
 

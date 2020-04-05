@@ -1,23 +1,20 @@
 
+import { AuthActions } from '../Authentication/Store';
+import { getType } from 'typesafe-actions';
+ 
 const initState = {
-  posts: [
-    {id: '1', title: 'Stuff', body: 'Lots of pokemon'},
-    {id: '2', title: 'Evil Squirtles', body: 'Lots of pokemon'},
-    {id: '3', title: 'Pikachu is Shocking', body: 'Ouch!'},
-    {id: '4', title: 'Evil Charizards', body: 'They\'re on fire!'},
-    {id: '5', title: 'Exploud is Loud!', body: 'Cover your ears...'},
-  ],
   selectedView: "Dashboard",
+  isNewRegistrationSuccess: false,
+  isLoggedIn: false
 };
 
 const rootReducer = (state=initState, action) => {
-  switch(action.type) {
-    case 'DELETE_POST': {
-      const posts = state.posts.filter((post) => post.id !== action.id);
+  switch(action.type) {    
+    case getType(AuthActions.registerUser.success): {
       return {
         ...state,
-        posts
-      };
+        isNewRegistrationSuccess: true,
+      }
     }
 
     case 'SELECT_VIEW': {
@@ -33,11 +30,6 @@ const rootReducer = (state=initState, action) => {
         ...state,
         [action.payload.login]: action.payload
       }
-
-    // case 'PING':
-    //   return { isPinging: true};
-    // case 'PONG':
-    //   return { isPinging: false};
 
     default: {
       return state;

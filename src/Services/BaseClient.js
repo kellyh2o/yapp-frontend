@@ -9,14 +9,17 @@ export class BaseClient {
         this.baseUrl = url;
     }
 
-    // processHeaders(response) {
-    //     const _headers = {};
-    //     if (response.headers && typeof(response.headers === "object")) {
-    //         for (const header in response.headers) {
-    //             if (response.headers.has)
-    //         }
-    //     }
-    // }
+    processHeaders(response) {
+        const _headers = {};
+        if (response.headers && typeof(response.headers === "object")) {
+            for (const header in response.headers) {
+                if (response.headers.hasOwnProperty(header)) {
+                    _headers[header] = response.headers[header];
+                }
+            }
+        }
+        return _headers;
+    }
 
     handleBadRequest(response, headers, status) {
         let result400 = response.data;

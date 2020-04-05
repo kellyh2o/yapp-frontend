@@ -1,5 +1,5 @@
 
-import { BaseClient } from "../../Services";
+import { BaseClient } from "../../Services/BaseClient";
 
 export class JumpsApi extends BaseClient {
 

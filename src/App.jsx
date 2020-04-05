@@ -1,8 +1,8 @@
 import React from 'react';
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import MainDisplay from './Layout/MainDisplay';
-import LoginPage from './Login/LoginPage';
-import RegisterPage from './Login/RegisterPage';
+import LoginPage from './Authentication/LoginPage';
+import RegisterPage from './Authentication/RegisterPage';
 import { history } from './Redux/history';
 
 export default class App extends React.Component {

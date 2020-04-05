@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchUsers } from '../Store/user-actions';
+import { fetchUsers } from '../Store/users-actions';
 
 class UserProfile extends Component { 
     render() {

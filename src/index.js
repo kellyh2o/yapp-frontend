@@ -19,15 +19,18 @@ const enhancer = composeEnhancers(applyMiddleware(epicMiddleware));
 
 const store = createStore(
   rootReducer,
-  //window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(applyMiddleware(epicMiddleware)),
-  //window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(epicMiddleware)
   initialState,
   enhancer
 );
 
 epicMiddleware.run(rootEpic);
 
-ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>, 
+  document.getElementById('root')
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

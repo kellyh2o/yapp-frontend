@@ -1,10 +1,10 @@
 
 
 import { combineEpics } from 'redux-observable';
-import { fetchUsersEpic, pingEpic } from '../Users/Store/user-epic'; 
+import { fetchUsersEpic } from '../Users/Store/users-epic'; 
+import { fetchJumpsEpic } from '../Jumps/Store/jumps-epic'; 
 
 export default combineEpics(
-    //...Object.values(fetchUsersEpic)
     fetchUsersEpic,
-    //pingEpic
+    fetchJumpsEpic
 );

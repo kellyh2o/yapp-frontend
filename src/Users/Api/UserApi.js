@@ -1,5 +1,5 @@
 
-import { BaseClient } from "../../Client/BaseClient";
+import { BaseClient } from "../../Services";
 
 export class UserApi extends BaseClient {
 

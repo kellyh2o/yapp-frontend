@@ -10,9 +10,11 @@ import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import MainDisplay from './Layout/MainDisplay';
+import SelectedDisplay from './SelectedDisplay';
 import { connect } from 'react-redux';
-import LeftDrawerMenu from './Layout/LeftDrawerMenu';
+import LeftDrawerMenu from './LeftDrawerMenu';
+
+
 
 const drawerWidth = 240;
 
@@ -82,7 +84,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function App() {
+export default function MainDisplay() {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -142,22 +144,8 @@ export default function App() {
         })}
       >
         <div className={classes.mainPanelHeader} />
-        <MainDisplay />
+        <SelectedDisplay />
       </main>
     </div>
   );
 }
-
-// const mapStateToProps = (state) => {
-//     return {
-//         selectedView: state.selectedView
-//     }
-// }
-
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         selectView: (view) => { dispatch({type: 'SELECT_VIEW', view: view}) }
-//     }
-// }
-
-//export default connect(mapStateToProps, mapDispatchToProps)(App);

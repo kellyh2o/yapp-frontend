@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Dashboard from "../Dashboard/Components/Dashboard";
-import UserProfile from "../UserProfile/Components/UserProfile";
+import UserProfile from "../Users/Components/UserProfile";
 import Settings from "../Settings/Components/Settings";
 
 
-class MainDisplay extends Component {
+class SelectedDisplay extends Component {
 
     render() {
         switch (this.props.selectedView) {
@@ -26,4 +26,4 @@ const mapStateToProps = (state) => {
     };
 }
 
-export default connect(mapStateToProps)(MainDisplay);
+export default connect(mapStateToProps)(SelectedDisplay);

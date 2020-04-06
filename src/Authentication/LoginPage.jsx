@@ -23,7 +23,7 @@ const LoginPage = (props) => {
                     <Grid item>
                         <Box style={{padding: "20px", margin: "20px", border: "1px lightgrey solid", borderRadius: "5px"}}>
                             <Box style={{paddingTop: "10px", textAlign: "center"}}>
-                                <Typography variant="h4">Bike Park System</Typography>
+                                <Typography variant="h4">Bike Park Reporter</Typography>
                             </Box>
                             <form autoComplete="off" style={{padding: "20px", margin: "auto", width: "77%"}}>
                                 <TextField

@@ -12,7 +12,12 @@ import rootEpic from './Redux/root-epic';
 export const epicMiddleware = createEpicMiddleware();
 
 // rehydrate state on app start
-const initialState = {};
+const initialState = {
+  selectedView: "Dashboard",
+  isNewRegistrationSuccess: false,
+  isLoggedIn: false,
+  token: null,
+};
 
 const composeEnhancers = (process.env.NODE_ENV === "development" && window && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 const enhancer = composeEnhancers(applyMiddleware(epicMiddleware));

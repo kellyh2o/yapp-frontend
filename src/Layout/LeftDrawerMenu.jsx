@@ -14,18 +14,15 @@ class LeftDrawerMenu extends Component {
     render() {
         return (
             <List>
-              {/* </List><ListItem button key={'Dashboard'} selected={this.props.isDashboardSelected} onClick={handleViewDashboard}> */}
               <ListItem button key={'Dashboard'} selected={this.props.isDashboardSelected} onClick={() => { this.props.selectView("Dashboard") }}>
                 <ListItemIcon><DashboardIcon /></ListItemIcon>
                 <ListItemText primary={'Dashboard'} />
               </ListItem>
-                {/* <ListItem button key={'User Profile'} selected={this.props.isUserProfileSelected} onClick={handleViewUserProfile}> */}
                 <ListItem button key={'User Profile'} selected={this.props.isUserProfileSelected} onClick={() => { this.props.selectView("UserProfile") }}>
                   <ListItemIcon><PersonIcon /></ListItemIcon>
                   <ListItemText primary={'User Profile'} />
                 </ListItem>
                 <ListItem button key={'Settings'} selected={this.props.isSettingsSelected} onClick={() => { this.props.selectView("Settings") }}>
-                {/* <ListItem button key={'Settings'} selected={this.props.isSettingsSelected} onClick={handleViewSettings}> */}
                   <ListItemIcon><SettingsIcon /></ListItemIcon>
                   <ListItemText primary={'Settings'} />
                 </ListItem>

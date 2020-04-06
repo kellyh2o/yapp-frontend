@@ -75,15 +75,15 @@ const LoginPage = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        isDashboardSelected: state.selectedView === "Dashboard",
-        isUserProfileSelected: state.selectedView === "UserProfile",
-        isSettingsSelected: state.selectedView === "Settings",
+        isLoggedIn: state.isLoggedIn
     };
 }
 
 const mapDispatchToProps = (dispatch) => ({
     login: (email, password) => {
-        dispatch(AuthActions.loginUser.request(email, password))
+        dispatch(AuthActions.loginUser.request({
+            email, password
+        }));
     }
 });
 

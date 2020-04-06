@@ -11,15 +11,16 @@ export class JumpsApi extends BaseClient {
      * Retrieves a list of jumps for a given project
      * @param projectId The unique id of the project
      */
-    async getAllJumps(projectId) {
+    async getAllJumps(token, locationId) {
         let url = this.baseUrl + "/locations/{locationId}/jumps";
-        url = url.replace("{locationId}", encodeURIComponent(projectId));
+        url = url.replace("{locationId}", encodeURIComponent(locationId));
 
         const options = {
             method: "GET",
             url,
             headers: {
                 Accept: "application/json",
+                "auth-token": token,
             },
         };
 
@@ -32,7 +33,7 @@ export class JumpsApi extends BaseClient {
      * @param projectId The unique id of the project
      * @param jumpId The unique id of the jump
      */
-    async getJump(projectId, jumpId) {
+    async getJump(token, projectId, jumpId) {
         let url = this.baseUrl + "/locations/{locationId}/jumps/{jumpId}";
         url = url.replace("{locationId}", encodeURIComponent(projectId));
         url = url.replace("{jumpId}", encodeURIComponent(jumpId));

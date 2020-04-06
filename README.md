@@ -1,18 +1,30 @@
-# Bike Data System: Front-end
+# Bike Park Reporter: Front-end
 
-The Bike Data System (BDS) is a dynamic web app used for monitoring the usage of bike jumps throughout a bike park. Users may use the system to register a new user, log in, change their password, and view data about mountain bike jumps.
+The Bike Park Reporter (BPR) is a dynamic web app used for monitoring the usage of bike jumps throughout a bike park. Users may use the system to register a new user, log in, change their password, and view data about mountain bike jumps.
 
-The frontend of the BDS provides an extensible UI built with React/Redux that allows a user to navigate throughout the system. React is used to build the HTML/Javascript in the app, while Redux is used to provide state. It is styled using [Material-UI](https://material-ui.com/), a popular React UI framework.
+The frontend of the BPR provides an extensible UI built with React/Redux that allows a user to navigate throughout the system. React is used to build the HTML/Javascript in the app, while Redux is used to provide state. It is styled using [Material-UI](https://material-ui.com/), a popular React UI framework.
 
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Initial Setup
+
+First install all of the packages:
+
+```bash
+npm install
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+
+```bash
+npm start
+```
+
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -20,12 +32,16 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### `npm test`
+```bash
+npm test
+```
 
 Launches the test runner in the interactive watch mode.<br>
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+```bash
+npm run build
+```
 
 Builds the app for production to the `build` folder.<br>
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -35,7 +51,9 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+```bash
+npm run eject
+```
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 

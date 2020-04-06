@@ -19,17 +19,18 @@ export class AuthenticationApi extends BaseClient {
      */
     async login(email, password) {
         let url = this.baseUrl + "/auth/login";
+        let data = {
+            email: email,
+            password: password
+        };
 
         const options = {
             method: "POST",
             url,
             headers: {
-                Accept: "application/json",
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify({
-                email: email,
-                password: password
-            })
+            data: data
         };
 
         const response = await this.instance.request(options);

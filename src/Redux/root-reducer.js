@@ -17,6 +17,13 @@ const rootReducer = (state=initState, action) => {
       }
     }
 
+    case getType(AuthActions.loginUser.success): {
+      return {
+        ...state,
+        isLoggedIn: true,
+      }
+    }
+
     case 'SELECT_VIEW': {
       const selectedView = action.view;
       return {

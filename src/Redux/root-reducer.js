@@ -2,13 +2,8 @@
 import { AuthActions } from '../Authentication/Store';
 import { getType } from 'typesafe-actions';
  
-const initState = {
-  selectedView: "Dashboard",
-  isNewRegistrationSuccess: false,
-  isLoggedIn: false
-};
 
-const rootReducer = (state=initState, action) => {
+const rootReducer = (state, action) => {
   switch(action.type) {    
     case getType(AuthActions.registerUser.success): {
       return {
@@ -21,6 +16,7 @@ const rootReducer = (state=initState, action) => {
       return {
         ...state,
         isLoggedIn: true,
+        token: action.payload.token,
       }
     }
 

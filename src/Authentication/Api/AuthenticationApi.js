@@ -18,6 +18,7 @@ export class AuthenticationApi extends BaseClient {
      * @param password The user's password
      */
     async login(email, password) {
+
         let url = this.baseUrl + "/auth/login";
         let data = {
             email: email,

@@ -16,14 +16,7 @@ export default class App extends React.Component {
   render() {
     const { alert } = this.props;
     return (
-      <Router history={history}>
-        <Switch>
-          <Route exact path="/" component={RoutedDisplay} />
-          <Route path="/login" component={LoginPage} />
-          <Route path="/register" component={RegisterPage} />
-          <Redirect from="*" to="/" />
-        </Switch>
-      </Router>
+      <RoutedDisplay />
     )
   }
 }

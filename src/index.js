@@ -17,6 +17,10 @@ const initialState = {
   isNewRegistrationSuccess: false,
   isLoggedIn: false,
   token: null,
+  locations: null,
+  jumps: null,
+  jumpEvents: null,
+  showLoginPage: true
 };
 
 const composeEnhancers = (process.env.NODE_ENV === "development" && window && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;

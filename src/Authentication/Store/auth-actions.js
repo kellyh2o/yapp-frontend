@@ -10,6 +10,9 @@ export const REGISTER_USER_SUCCESS = "auth/REGISTER_USER_SUCCESS";
 export const REGISTER_USER_FAILURE = "auth/REGISTER_USER_FAILURE";
 export const REGISTER_USER_CANCEL = "auth/REGISTER_USER_CANCEL";
 
+export const VIEW_REGISTER_PAGE = "auth/VIEW_REGISTER_PAGE";
+export const VIEW_LOGIN_PAGE = "auth/VIEW_LOGIN_PAGE";
+
 export const loginUser = createAsyncAction(
     LOGIN_USER,
     LOGIN_USER_SUCCESS,
@@ -24,3 +27,5 @@ export const registerUser = createAsyncAction(
     REGISTER_USER_CANCEL
 )();
 
+export const viewRegisterPage = VIEW_REGISTER_PAGE;
+export const viewLoginPage = VIEW_LOGIN_PAGE;

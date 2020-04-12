@@ -1,11 +1,22 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Dashboard from "../Dashboard/Components/Dashboard";
+import Dashboard from "../Dashboard/Dashboard";
 import UserProfile from "../Users/Components/UserProfile";
 import Settings from "../Settings/Components/Settings";
 
+import { JumpsActions } from '../Jumps/Store';
+import { LocationsActions } from '../Locations/Store';
+
+
+import { setupStore } from '../Jumps/Store/jumps-actions';
+
+
 
 class SelectedDisplay extends Component {
+    componentDidMount() {
+        this.props.getLocations(this.props.token);
+        this.props.setupStore(this.props.token);
+    }
 
     render() {
         switch (this.props.selectedView) {
@@ -23,7 +34,17 @@ class SelectedDisplay extends Component {
 const mapStateToProps = (state) => {
     return {
         selectedView: state.selectedView,
+        token: state.token,
     };
 }
 
-export default connect(mapStateToProps)(SelectedDisplay);
+const mapDispatchToProps = (dispatch) => ({
+    getLocations: (token) => {
+      dispatch(LocationsActions.fetchLocations.request(token));
+    },
+    setupStore: (token) => {
+        setupStore(dispatch, token);
+    }
+  })
+
+export default connect(mapStateToProps, mapDispatchToProps)(SelectedDisplay);

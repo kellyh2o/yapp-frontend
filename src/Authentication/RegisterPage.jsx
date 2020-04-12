@@ -82,8 +82,8 @@ const RegisterPage = (props) => {
                                 <Typography>
                                     Have an account? 
                                     <Button 
-                                        href="/login"
                                         color="primary"
+                                        onClick={() => props.viewLoginPage()}
                                     >
                                         Log in
                                     </Button>
@@ -111,7 +111,10 @@ const mapDispatchToProps = (dispatch) => ({
             email: email,
             password: password
         }));
-    }
+    },
+    viewLoginPage: () => {
+        dispatch({ type: AuthActions.viewLoginPage })
+    },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RegisterPage);

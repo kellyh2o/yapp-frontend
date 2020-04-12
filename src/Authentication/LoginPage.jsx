@@ -58,9 +58,9 @@ const LoginPage = (props) => {
                         <Box style={{padding: "20px", margin: "20px", border: "1px lightgrey solid", borderRadius: "5px", textAlign: "center"}}>
                             <Typography>
                                 Don't have an account? 
-                                <Button 
-                                    href="/register"
+                                <Button
                                     color="primary"
+                                    onClick={() => props.viewRegisterPage()}
                                 >
                                     Sign Up
                                 </Button>
@@ -84,7 +84,11 @@ const mapDispatchToProps = (dispatch) => ({
         dispatch(AuthActions.loginUser.request({
             email, password
         }));
-    }
+    },
+    viewRegisterPage: () => {
+        dispatch({ type: AuthActions.viewRegisterPage })
+    },
+    //selectView: (view) => {dispatch({type: 'SELECT_VIEW', view: view})}
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);

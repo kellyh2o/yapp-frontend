@@ -14,6 +14,7 @@ const RegisterPage = (props) => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
     if (props.isNewRegistrationSuccess) {
@@ -58,6 +59,14 @@ const RegisterPage = (props) => {
                                         style={{width: "300px", margin: "10px"}}
                                     />
                                     <TextField
+                                        id="username-input"
+                                        label="Username"
+                                        type="username"
+                                        variant="outlined"
+                                        onChange={(event) => setUsername(event.target.value)}
+                                        style={{width: "300px", margin: "10px"}}
+                                    />
+                                    <TextField
                                         id="password-input"
                                         label="Password"
                                         type="username"
@@ -70,7 +79,7 @@ const RegisterPage = (props) => {
                                         variant="contained" 
                                         color="primary"
                                         onClick={() => {
-                                            props.registerUser(firstName, lastName, email, password);
+                                            props.registerUser(firstName, lastName, email, username, password);
                                         }}
                                         style={{width: "300px", margin: "10px"}}>
                                     Sign Up
@@ -104,11 +113,12 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    registerUser: (firstName, lastName, email, password) => {
+    registerUser: (firstName, lastName, email, username, password) => {
         dispatch(AuthActions.registerUser.request({
             firstName: firstName,
             lastName: lastName,
             email: email,
+            username: username,
             password: password
         }));
     },

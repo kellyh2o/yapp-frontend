@@ -20,7 +20,7 @@ export class JumpsApi extends BaseClient {
             url,
             headers: {
                 Accept: "application/json",
-                "auth-token": token,
+                Authorization: "Bearer " + token,
             },
         };
 
@@ -42,8 +42,8 @@ export class JumpsApi extends BaseClient {
             method: "GET",
             url,
             headers: {
-                //Authorization: "Bearer " + LoginContainer.Instance.Token,
                 Accept: "application/json",
+                Authorization: "Bearer " + token,
             },
         };
 
@@ -69,7 +69,6 @@ export class JumpsApi extends BaseClient {
             url,
             headers: {
                 Accept: "application/json",
-                "auth-token": token,
             },
             data: data
         };

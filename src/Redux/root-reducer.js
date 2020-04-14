@@ -1,7 +1,7 @@
 
 import { AuthActions } from '../Authentication/Store';
 import { LocationsActions } from '../Locations/Store';
-import { JumpsActions } from '../Jumps/Store';
+import { UsersActions } from '../Users/Store';
 import { getType } from 'typesafe-actions';
  
 
@@ -41,7 +41,14 @@ const rootReducer = (state, action) => {
       return {
         ...state,
         isLoggedIn: true,
-        token: action.payload.token,
+        token: action.payload.accessToken,
+      }
+    }
+
+    case getType(UsersActions.fetchMe.success): {
+      return {
+        ...state,
+        me: action.payload,
       }
     }
 
@@ -53,29 +60,11 @@ const rootReducer = (state, action) => {
       }
     }
 
-    case getType(JumpsActions.fetchJumps.success): {
-      return {
-        ...state,
-        jumps: action.payload,
-        noJump1Created: action.payload.filter(jump => jump.name === demoJump1).length === 0,
-        noJump2Created: action.payload.filter(jump => jump.name === demoJump2).length === 0
-      }
-    }
-
     case getType(LocationsActions.createLocation.success): {
       return {
         ...state,
         locations: [...state.locations, action.payload],
         demoLocation: action.payload.find(p => p.name === demoLocationName)
-      }
-    }
-
-    case getType(JumpsActions.createJump.success): {
-      return {
-        ...state,
-        jumps: [...state.jumps, action.payload],
-        noJump1Created: (action.payload.name !== demoJump1 && state.jumps.filter(jump => jump.name === demoJump1).length === 0),
-        noJump2Created: (action.payload.name !== demoJump2 && state.jumps.filter(jump => jump.name === demoJump2).length === 0)
       }
     }
 
@@ -86,12 +75,6 @@ const rootReducer = (state, action) => {
         selectedView
       }
     }
-
-    case 'FETCH_USER_FULFILLED': 
-      return {
-        ...state,
-        [action.payload.login]: action.payload
-      }
 
     default: {
       return state;

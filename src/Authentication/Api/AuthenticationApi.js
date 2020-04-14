@@ -4,24 +4,15 @@ import { BaseClient } from "../../Services/BaseClient";
 export class AuthenticationApi extends BaseClient {
 
     /**
-     * Constructs the authentication api
-     * @param baseUrl The base url of the api ex. http://localhost:3001/v1
-     * @param instance The instantiated api, if available
-     */
-    constructor(baseUrl, instance) {
-        super(baseUrl, instance);
-    }
-
-    /**
      * Logs in the user
      * @param email The user's email address
      * @param password The user's password
      */
-    async login(email, password) {
+    async login(username, password) {
 
         let url = this.baseUrl + "/auth/login";
         let data = {
-            email: email,
+            username: username,
             password: password
         };
 
@@ -46,12 +37,13 @@ export class AuthenticationApi extends BaseClient {
      * @param email The email address of the new user
      * @param password The password of the new user
      */
-    async registerUser(firstName, lastName, email, password) {
+    async registerUser(firstName, lastName, email, username, password) {
         let url = this.baseUrl + "/auth/register";
         let data = {
             firstName: firstName,
             lastName: lastName,
             email: email,
+            username: username,
             password: password
         };
 

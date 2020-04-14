@@ -17,30 +17,15 @@ const demoJump4 = "Steep Drop";
 const demoJump5 = "Table Top";
 
 function Dashboard (props) {
-  useEffect(() => {
-
-    if (props.demoLocation && props.jumps === null) {
-      props.getJumps(props.token, props.demoLocation._id);
-    }
- });
 
   function generateLocationName() {
     return props.demoLocation ? props.demoLocation.name : "";
   }
 
   function generateJumpList() {
-
-    // if (props.demoLocation && props.jumps && props.noJump1Created) {
-    //   props.createJump(props.token, props.demoLocation._id, demoJump1);
-    // }
-
-    // if (props.demoLocation && props.jumps && props.noJump2Created) {
-    //   props.createJump(props.token, props.demoLocation._id, demoJump2);
-    // }
-
-    if (props.jumps) {
+    if (props.demoLocation && props.demoLocation.jumps) {
       return ( 
-          props.jumps.map(element => {
+        props.demoLocation.jumps.map(element => {
             return (
               <ListItem key={element._id}>
                 {element.name}
@@ -68,26 +53,14 @@ const mapStateToProps = (state) => {
   return {
     token: state.token,
     locations: state.locations,
-    demoLocation: state.demoLocation,
-    jumps: state.jumps,
-    noJump1Created: state.noJump1Created,
-    noJump2Created: state.noJump2Created
+    demoLocation: state.demoLocation
   };
 }
 
 const mapDispatchToProps = (dispatch) => ({
   getLocations: (token) => {
     dispatch(LocationsActions.fetchLocations.request(token));
-  },
-  createLocation: (token, locationName) => {
-    dispatch(LocationsActions.createLocation.request({ token, locationName }));
-  },
-  getJumps: (token, locationId) => {
-    dispatch(JumpsActions.fetchJumps.request({ token, locationId }));
-  },
-  createJump: (token, locationId, jumpName) => {
-    dispatch(JumpsActions.createJump.request({ token, locationId, jumpName }));
-  },
+  }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

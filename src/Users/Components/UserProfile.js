@@ -16,7 +16,11 @@ class UserProfile extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    posts: state.posts
+    firstName: state.me.firstName,
+    lastName: state.me.lastName,
+    email: state.me.email,
+    username: state.me.username,
+    password: state.me.password,
   };
 }
 

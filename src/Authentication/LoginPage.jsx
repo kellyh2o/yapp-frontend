@@ -10,7 +10,7 @@ import { AuthActions } from './Store';
 
 const LoginPage = (props) => {
 
-    const [email, setEmail] = useState("");
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
     return (
@@ -28,10 +28,10 @@ const LoginPage = (props) => {
                             <form autoComplete="off" style={{padding: "20px", margin: "auto", width: "77%"}}>
                                 <TextField
                                     id="email-input"
-                                    label="Email"
+                                    label="Username"
                                     type="username"
                                     variant="outlined"
-                                    onChange={(event) => setEmail(event.target.value)}
+                                    onChange={(event) => setUsername(event.target.value)}
                                     style={{width: "300px", margin: "10px"}}
                                 />
                                 <TextField
@@ -47,7 +47,7 @@ const LoginPage = (props) => {
                                     variant="contained" 
                                     color="primary"
                                     onClick={() => {
-                                        props.login(email, password);
+                                        props.login(username, password);
                                     }}
                                     style={{width: "300px", margin: "10px"}}>
                                 Log In
@@ -80,9 +80,9 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    login: (email, password) => {
+    login: (username, password) => {
         dispatch(AuthActions.loginUser.request({
-            email, password
+            username, password
         }));
     },
     viewRegisterPage: () => {

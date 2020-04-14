@@ -24,7 +24,7 @@ export class LocationsApi extends BaseClient {
             url,
             headers: {
                 Accept: "application/json",
-                "auth-token": token,
+                Authorization: "Bearer " + token,
             },
         };
 
@@ -48,8 +48,8 @@ export class LocationsApi extends BaseClient {
             method: "POST",
             url,
             headers: {
-                "Content-Type": "application/json",
-                "auth-token": token
+                Accept: "application/json",
+                Authorization: "Bearer " + token,
             },
             data: data
         };

@@ -9,7 +9,7 @@ const api = new UserApi('http://localhost:3001/v1');
 export const fetchUsersEpic = action$ => action$.pipe(
     filter(isActionOf(fetchUsers.request)),
     switchMap(action => 
-        from(api.getAllUsers(action.payload.token)).pipe(
+        from(api.getAllUsers(action.payload)).pipe(
             map(result => fetchUsers.success(result)),
             catchError(error => of(fetchUsers.failure(error))),
             takeUntil(action$.pipe(filter(isActionOf(fetchUsers.cancel))))
@@ -20,7 +20,7 @@ export const fetchUsersEpic = action$ => action$.pipe(
 export const fetchMeEpic = action$ => action$.pipe(
     filter(isActionOf(fetchMe.request)),
     switchMap(action => 
-        from(api.getMe(action.payload.token)).pipe(
+        from(api.getMe(action.payload)).pipe(
             map(result => fetchMe.success(result)),
             catchError(error => of(fetchMe.failure(error))),
             takeUntil(action$.pipe(filter(isActionOf(fetchMe.cancel))))

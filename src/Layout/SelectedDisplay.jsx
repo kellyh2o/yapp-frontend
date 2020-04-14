@@ -5,12 +5,14 @@ import UserProfile from "../Users/Components/UserProfile";
 import Settings from "../Settings/Components/Settings";
 import { LocationsActions } from '../Locations/Store';
 import { setupDemoStore } from '../Redux/Store/setupDemoStore';
+import { UsersActions } from '../Users/Store';
 
 
 class SelectedDisplay extends Component {
     componentDidMount() {
-        this.props.getLocations(this.props.token);
         this.props.setupDemoStore(this.props.token);
+        this.props.getLocations(this.props.token);
+        this.props.fetchMe(this.props.token);
     }
 
     render() {
@@ -39,6 +41,9 @@ const mapDispatchToProps = (dispatch) => ({
     },
     setupDemoStore: (token) => {
         setupDemoStore(dispatch, token);
+    },
+    fetchMe: (token) => {
+        dispatch(UsersActions.fetchMe.request(token));
     }
   })
 

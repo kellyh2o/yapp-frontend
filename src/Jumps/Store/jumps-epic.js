@@ -1,6 +1,6 @@
 import { JumpsApi } from '../Api/JumpsApi';
 import { from, of } from 'rxjs';
-import { catchError, filter, map, switchMap, mergeMap, takeUntil, mapTo, delay } from 'rxjs/operators';
+import { catchError, filter, map, switchMap, takeUntil } from 'rxjs/operators';
 import { isActionOf } from 'typesafe-actions';
 import { JumpsActions } from './';
 

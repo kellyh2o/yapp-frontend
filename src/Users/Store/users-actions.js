@@ -1,4 +1,4 @@
-import { createAsyncAction, createStandardAction } from 'typesafe-actions';
+import { createAsyncAction } from 'typesafe-actions';
 
 export const FETCH_USERS = "users/FETCH_USERS";
 export const FETCH_USERS_SUCCESS = "users/FETCH_USERS_SUCCESS";

@@ -4,6 +4,11 @@ import { LocationsActions } from '../../Locations/Store';
 var $;
 $ = require('jquery');
 
+
+// For the first round of this application, the data
+// is posted manually to the server upon app startup, 
+// if it does not exist already.
+
 export function setupDemoStore(dispatch, token) {
     $.ajax({
         type: "GET",
@@ -26,7 +31,7 @@ async function setupLocations(dispatch, token, data) {
 
     if (filteredLocations.length !== 0) {
         for (var i = 0; i < filteredLocations.length; i++) {            
-            var request = {
+            var deleteRequest = {
                 "url": `http://localhost:3001/v1/locations/${filteredLocations[i]._id}`,
                 "method": "DELETE",
                 "timeout": 0,
@@ -36,7 +41,7 @@ async function setupLocations(dispatch, token, data) {
                 }
               };
               
-            await $.ajax(request);
+            await $.ajax(deleteRequest);
         }
     }
 

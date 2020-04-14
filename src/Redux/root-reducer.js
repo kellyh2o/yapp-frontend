@@ -6,12 +6,6 @@ import { getType } from 'typesafe-actions';
  
 
 const demoLocationName = "Regis Mountain Bike Park";
-const demoJump1 = "Wall Ride";
-const demoJump2 = "Dropout";
-const demoJump3 = "Barn Door";
-const demoJump4 = "Steep Drop";
-const demoJump5 = "Table Top";
-
 
 const rootReducer = (state, action) => {
   switch(action.type) {    

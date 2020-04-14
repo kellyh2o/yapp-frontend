@@ -4,15 +4,6 @@ import { BaseClient } from "../../Services/BaseClient";
 export class LocationsApi extends BaseClient {
 
     /**
-     * Constructs the locations api
-     * @param baseUrl The base url of the api ex. http://localhost:3001/v1
-     * @param instance The instantiated api, if available
-     */
-    constructor(baseUrl, instance) {
-        super(baseUrl, instance);
-    }
-
-    /**
      * Retrieves a list of locations
      * @param token The authentication token
      */

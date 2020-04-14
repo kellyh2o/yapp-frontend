@@ -1,4 +1,4 @@
-import { createAsyncAction, createStandardAction } from 'typesafe-actions';
+import { createAsyncAction } from 'typesafe-actions';
 
 
 export const FETCH_LOCATIONS = "locations/FETCH_LOCATIONS";

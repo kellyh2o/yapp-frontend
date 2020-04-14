@@ -2,11 +2,6 @@
 import { BaseClient } from "../../Services/BaseClient";
 
 export class JumpsApi extends BaseClient {
-
-    constructor(baseUrl, instance) {
-        super(baseUrl, instance);
-    }
-
     /**
      * Retrieves a list of jumps for a given location
      * @param locationId The unique id of the location

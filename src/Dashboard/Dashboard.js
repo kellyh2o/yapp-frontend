@@ -1,20 +1,10 @@
-import React, { Component, useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
-import { JumpsActions } from '../Jumps/Store';
 import { LocationsActions } from '../Locations/Store';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-
-// For the first round of this application, the data
-// is posted manually to the server upon app startup, 
-// if it does not exist already.
-const demoJump1 = "Wall Ride";
-const demoJump2 = "Dropout";
-const demoJump3 = "Barn Door";
-const demoJump4 = "Steep Drop";
-const demoJump5 = "Table Top";
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
 
 function Dashboard (props) {
 
@@ -41,7 +31,11 @@ function Dashboard (props) {
 
   return (
     <div>
-      <h3>{generateLocationName()}</h3>
+      <Box>
+        <Typography variant="h4">
+          {generateLocationName()}
+        </Typography>
+      </Box>
       <List>
         {generateJumpList()}
       </List>

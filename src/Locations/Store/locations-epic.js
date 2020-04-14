@@ -1,9 +1,8 @@
 import { LocationsApi } from '../Api/LocationsApi';
 import { LocationsActions } from './';
 import { from, of } from 'rxjs';
-import { catchError, filter, map, switchMap, mergeMap, takeUntil, mapTo, delay, tap } from 'rxjs/operators';
+import { catchError, filter, map, switchMap, takeUntil } from 'rxjs/operators';
 import { isActionOf } from 'typesafe-actions';
-import { JumpsActions } from '../../Jumps/Store';
 
 
 const api = new LocationsApi('http://localhost:3001/v1');

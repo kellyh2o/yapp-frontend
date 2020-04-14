@@ -1,4 +1,4 @@
-import { createAsyncAction, createStandardAction } from 'typesafe-actions';
+import { createAsyncAction } from 'typesafe-actions';
 
 export const LOGIN_USER = "auth/LOGIN_USER";
 export const LOGIN_USER_SUCCESS = "auth/LOGIN_USER_SUCCESS";

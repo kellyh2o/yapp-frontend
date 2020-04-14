@@ -2,11 +2,6 @@
 import { BaseClient } from "../../Services/BaseClient";
 
 export class UserApi extends BaseClient {
-
-    constructor(baseUrl, instance) {
-        super(baseUrl, instance);
-    }
-
     async getMe(token) {
         let url = this.baseUrl + "/users/me";
         const options = {
@@ -14,7 +9,7 @@ export class UserApi extends BaseClient {
             url,
             headers: {
                 Accept: "application/json",
-                Authorization: "Bearer " + token,
+                Authorization: `Bearer ${token}`,
             },
         };
 
@@ -30,6 +25,7 @@ export class UserApi extends BaseClient {
             url,
             headers: {
                 Accept: "application/json",
+                Authorization: `Bearer ${token}`,
             },
         };
 

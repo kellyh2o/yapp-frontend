@@ -1,55 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
+import { UsersActions } from '../Store';
 
-function UserProfile(props) { 
+const UserProfile = (props) => { 
+
+  const [firstName, setFirstName] = useState(props.firstName ? props.firstName : "");
+  const [lastName, setLastName] = useState(props.lastName ? props.lastName : "");
+  const [email, setEmail] = useState(props.email ? props.email : "");
+  const [username, setUsername] = useState(props.username ? props.username : "");
+
 
   return (
-    <div>
+    <div style={{paddingLeft: "20px", width: "400px"}}>
       <Box>
         <Typography variant="h4">
           User Profile
         </Typography>
-        <form autoComplete="off" style={{padding: "20px", margin: "auto", width: "77%"}}>               
+        <form autoComplete="off" style={{paddingTop: "20px", paddingBottom: "20px"}}>               
             <TextField
               label="First Name"
               variant="outlined"
               type="username"
-              defaultValue={props.firstName}
-              style={{width: "300px", margin: "10px"}}
+              defaultValue={firstName}
+              onChange={(event) => setFirstName(event.target.value)}
+              style={{width: "300px", marginTop: "10px", marginBottom: "10px"}}
             />               
             <TextField
               label="Last Name"
               variant="outlined"
               type="username"
-              defaultValue={props.lastName}
-              style={{width: "300px", margin: "10px"}}
+              defaultValue={lastName}
+              onChange={(event) => setLastName(event.target.value)}
+              style={{width: "300px", marginTop: "10px", marginBottom: "10px"}}
             />               
             <TextField
               label="Email"
               variant="outlined"
               type="username"
-              defaultValue={props.email}
-              style={{width: "300px", margin: "10px"}}
+              defaultValue={email}
+              onChange={(event) => setEmail(event.target.value)}
+              style={{width: "300px", marginTop: "10px", marginBottom: "10px"}}
             />               
             <TextField
               label="Username"
               variant="outlined"
               type="username"
-              defaultValue={props.username}
-              style={{width: "300px", margin: "10px"}}
+              defaultValue={username}
+              onChange={(event) => setUsername(event.target.value)}
+              style={{width: "300px", marginTop: "10px", marginBottom: "10px"}}
             />
             <Button 
                 variant="contained" 
                 color="primary"
+                disabled={
+                  props.firstName === firstName &&
+                  props.lastName === lastName && 
+                  props.username === username &&
+                  props.email === email  
+                }
                 onClick={() => {
-                    //props.login(username, password);
+                  props.updateMe(props.token, firstName, lastName, email, username);
                 }}
-                style={{width: "300px", margin: "10px"}}>
-            Update
+                style={{width: "300px", marginTop: "10px", marginBottom: "10px"}}>
+            Save Changes
             </Button>
 
         </form>
@@ -70,6 +87,19 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
+  updateMe: (token, firstName, lastName, email, username) => {
+    dispatch(UsersActions.updateMe.request(
+      {
+        token, 
+        user: { 
+          firstName, 
+          lastName, 
+          email, 
+          username 
+        }
+      }
+    ));
+  }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserProfile);

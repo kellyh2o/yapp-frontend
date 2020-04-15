@@ -46,6 +46,13 @@ const rootReducer = (state, action) => {
       }
     }
 
+    case getType(UsersActions.updateMe.success): {
+      return {
+        ...state,
+        me: action.payload,
+      }
+    }
+
     case getType(LocationsActions.fetchLocations.success): {
       return {
         ...state,

@@ -87,8 +87,7 @@ const mapDispatchToProps = (dispatch) => ({
     },
     viewRegisterPage: () => {
         dispatch({ type: AuthActions.viewRegisterPage })
-    },
-    //selectView: (view) => {dispatch({type: 'SELECT_VIEW', view: view})}
+    }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);

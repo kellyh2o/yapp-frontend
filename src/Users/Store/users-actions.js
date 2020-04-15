@@ -15,6 +15,12 @@ export const FETCH_ME_SUCCESS = "users/FETCH_ME_SUCCESS";
 export const FETCH_ME_FAILURE = "users/FETCH_ME_FAILURE";
 export const FETCH_ME_CANCEL = "users/FETCH_ME_CANCEL";
 
+export const UPDATE_ME = "users/UPDATE_ME";
+export const UPDATE_ME_SUCCESS = "users/UPDATE_ME_SUCCESS";
+export const UPDATE_ME_FAILURE = "users/UPDATE_ME_FAILURE";
+export const UPDATE_ME_CANCEL = "users/UPDATE_ME_CANCEL";
+
+
 export const fetchUsers = createAsyncAction(
     FETCH_USERS,
     FETCH_USERS_SUCCESS,
@@ -27,5 +33,12 @@ export const fetchMe = createAsyncAction(
     FETCH_ME_SUCCESS,
     FETCH_ME_FAILURE,
     FETCH_ME_CANCEL
+)();
+
+export const updateMe = createAsyncAction(
+    UPDATE_ME,
+    UPDATE_ME_SUCCESS,
+    UPDATE_ME_FAILURE,
+    UPDATE_ME_CANCEL
 )();
 

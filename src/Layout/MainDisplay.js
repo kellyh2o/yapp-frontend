@@ -15,10 +15,13 @@ import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import { mainListItems, secondaryListItems } from '../Dashboard/listItems';
 import UserMenu from '../Users/Components/UserMenu';
 import SelectedDisplay from './SelectedDisplay';
-
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import BarChartIcon from '@material-ui/icons/BarChart';
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -139,6 +142,7 @@ const MainDisplay = (props) => {
           </IconButton>
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
             {props.selectedView === "Dashboard" ? "Dashboard" :
+            props.selectedView === "Reports" ? "Reports" :
             props.selectedView === "UserProfile" ? "My Account" :
             props.selectedView === "Settings" ? "Settings" : ""}
           </Typography>
@@ -158,9 +162,22 @@ const MainDisplay = (props) => {
           </IconButton>
         </div>
         <Divider />
-        <List>{mainListItems}</List>
-        <Divider />
-        <List>{secondaryListItems}</List>
+        <List>
+          <div>
+            <ListItem button selected={props.selectedView === "Dashboard"} onClick={() => props.selectView("Dashboard")}>
+              <ListItemIcon>
+                <DashboardIcon />
+              </ListItemIcon>
+              <ListItemText primary="Dashboard" />
+            </ListItem>
+            <ListItem button selected={props.selectedView === "Reports"} onClick={() => props.selectView("Reports")}>
+              <ListItemIcon>
+                <BarChartIcon />
+              </ListItemIcon>
+              <ListItemText primary="Reports" />
+            </ListItem>
+          </div>
+        </List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
@@ -181,4 +198,10 @@ const mapStateToProps = (state) => {
     };
 }
 
-export default connect(mapStateToProps)(MainDisplay);
+const mapDispatchToProps = (dispatch) => {
+  return {
+      selectView: (view) => {dispatch({type: 'SELECT_VIEW', view: view})}
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainDisplay);

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Dashboard from "../Dashboard/Dashboard";
+import Reports from "../Reports/Reports";
 import UserProfile from "../Users/Components/UserProfile";
 import Settings from "../Settings/Settings";
 import { LocationsActions } from '../Locations/Store';
@@ -21,6 +22,8 @@ class SelectedDisplay extends Component {
                 return <Settings />;
             case "UserProfile":
                 return <UserProfile />;
+            case "Reports":
+                return <Reports />;
             case "Dashboard":
             default: 
                 return <Dashboard />;

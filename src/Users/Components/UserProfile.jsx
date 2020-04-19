@@ -1,26 +1,43 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import TextField from '@material-ui/core/TextField';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import { UsersActions } from '../Store';
+import Title from '../../Dashboard/Title';
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+
+const useStyles = makeStyles((theme) => ({  
+  paper: {
+    padding: theme.spacing(2),
+    display: 'flex',
+    overflow: 'auto',
+    flexDirection: 'column',
+  }
+}));
+
 
 const UserProfile = (props) => { 
+
+  const classes = useStyles();
 
   const [firstName, setFirstName] = useState(props.firstName ? props.firstName : "");
   const [lastName, setLastName] = useState(props.lastName ? props.lastName : "");
   const [email, setEmail] = useState(props.email ? props.email : "");
   const [username, setUsername] = useState(props.username ? props.username : "");
 
-
   return (
-    <div style={{paddingLeft: "20px", width: "400px"}}>
-      <Box>
-        <Typography variant="h4">
-          User Profile
-        </Typography>
-        <form autoComplete="off" style={{paddingTop: "20px", paddingBottom: "20px"}}>               
+
+    <Grid container spacing={3}>
+      <Grid item xs={12} md={8} lg={9}>
+        <Paper className={classes.paper}>
+          <div style={{width: "auto", margin: "auto"}}>
+            <Title>
+              My Account
+            </Title>
+          </div>
+          <form autoComplete="off" style={{paddingTop: "20px", paddingBottom: "20px", width: "auto", margin: "auto"}}>               
             <TextField
               label="First Name"
               variant="outlined"
@@ -28,7 +45,8 @@ const UserProfile = (props) => {
               defaultValue={firstName}
               onChange={(event) => setFirstName(event.target.value)}
               style={{width: "300px", marginTop: "10px", marginBottom: "10px"}}
-            />               
+            />     
+            <br />          
             <TextField
               label="Last Name"
               variant="outlined"
@@ -36,7 +54,8 @@ const UserProfile = (props) => {
               defaultValue={lastName}
               onChange={(event) => setLastName(event.target.value)}
               style={{width: "300px", marginTop: "10px", marginBottom: "10px"}}
-            />               
+            />       
+            <br />                  
             <TextField
               label="Email"
               variant="outlined"
@@ -44,7 +63,8 @@ const UserProfile = (props) => {
               defaultValue={email}
               onChange={(event) => setEmail(event.target.value)}
               style={{width: "300px", marginTop: "10px", marginBottom: "10px"}}
-            />               
+            />          
+            <br />               
             <TextField
               label="Username"
               variant="outlined"
@@ -53,6 +73,7 @@ const UserProfile = (props) => {
               onChange={(event) => setUsername(event.target.value)}
               style={{width: "300px", marginTop: "10px", marginBottom: "10px"}}
             />
+            <br />          
             <Button 
                 variant="contained" 
                 color="primary"
@@ -66,13 +87,12 @@ const UserProfile = (props) => {
                   props.updateMe(props.token, firstName, lastName, email, username);
                 }}
                 style={{width: "300px", marginTop: "10px", marginBottom: "10px"}}>
-            Update Profile
+              Update Account
             </Button>
-
-        </form>
-
-      </Box>
-    </div>
+          </form>
+        </Paper>
+      </Grid>
+    </Grid>
   );
 }
 

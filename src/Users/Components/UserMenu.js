@@ -1,7 +1,5 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-import Grow from '@material-ui/core/Grow';
 import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -18,6 +16,12 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     marginRight: theme.spacing(2),
   },
+  normalButton: {
+    backgroundColor: ({ backgroundColor }) => backgroundColor,
+    "&:hover, &:focus": {
+      backgroundColor: "transparent"
+    },
+  }
 }));
 
 const UserMenu = (props) => {
@@ -59,6 +63,7 @@ const UserMenu = (props) => {
       <div>
         <IconButton
           color="inherit"
+          className={classes.normalButton}
           ref={anchorRef}
           aria-controls={open ? 'menu-list-grow' : undefined}
           aria-haspopup="true"
@@ -70,8 +75,18 @@ const UserMenu = (props) => {
             <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                 <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <MenuItem onClick={() => { props.selectView('UserProfile')}}>My Account</MenuItem>
-                    <MenuItem onClick={() => { props.selectView('Settings')}}>Settings</MenuItem>
+                    <MenuItem onClick={() => {
+                      props.selectView('UserProfile');
+                      setOpen(false);
+                    }}>
+                      My Account
+                    </MenuItem>
+                    <MenuItem onClick={() => { 
+                      props.selectView('Settings');
+                      setOpen(false);
+                    }}>
+                      Settings
+                    </MenuItem>
                     <MenuItem onClick={handleClose}>Logout</MenuItem>
                 </MenuList>
                 </ClickAwayListener>

@@ -1,12 +1,27 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import TextField from '@material-ui/core/TextField';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import { UsersActions } from '../Users/Store';
+import Title from '../Dashboard/Title';
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+
+
+const useStyles = makeStyles((theme) => ({  
+  paper: {
+    padding: theme.spacing(2),
+    display: 'flex',
+    overflow: 'auto',
+    flexDirection: 'column',
+  }
+}));
+
 
 const Settings = (props) => { 
+
+  const classes = useStyles();
 
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
@@ -14,36 +29,40 @@ const Settings = (props) => {
 
 
   return (
-    <div style={{paddingLeft: "20px", width: "400px"}}>
-      <Box>
-        <Typography variant="h4">
-          Settings
-        </Typography>
-        <Typography variant="subtitle1">
-          Change Password
-        </Typography>
-        <form autoComplete="off" style={{paddingTop: "20px", paddingBottom: "20px"}}>               
+
+    <Grid container spacing={3}>
+      <Grid item xs={12} md={8} lg={9}>
+        <Paper className={classes.paper}>
+          <div style={{width: "auto", margin: "auto"}}>
+            <Title>
+            Change Password
+            </Title>
+          </div>
+          <form autoComplete="off" style={{paddingTop: "20px", paddingBottom: "20px", width: "auto", margin: "auto"}}>                        
             <TextField
               label="Old Password"
               variant="outlined"
               type="username"
               onChange={(event) => setOldPassword(event.target.value)}
               style={{width: "300px", marginTop: "10px", marginBottom: "10px"}}
-            />               
+            />        
+            <br />                   
             <TextField
               label="New Password"
               variant="outlined"
               type="username"
               onChange={(event) => setNewPassword(event.target.value)}
               style={{width: "300px", marginTop: "10px", marginBottom: "10px"}}
-            />               
+            />            
+            <br />             
             <TextField
               label="Confirm New Password"
               variant="outlined"
               type="username"
               onChange={(event) => setConfirmNewPassword(event.target.value)}
               style={{width: "300px", marginTop: "10px", marginBottom: "10px"}}
-            />               
+            />          
+            <br />                     
             <Button 
                 variant="contained" 
                 color="primary"
@@ -56,13 +75,12 @@ const Settings = (props) => {
                   props.updateMe(props.token, props.firstName, props.lastName, props.email, props.username, newPassword);
                 }}
                 style={{width: "300px", marginTop: "10px", marginBottom: "10px"}}>
-            Update Profile
+            Update Password
             </Button>
-
-        </form>
-
-      </Box>
-    </div>
+          </form>
+        </Paper>
+      </Grid>
+    </Grid>
   );
 }
 

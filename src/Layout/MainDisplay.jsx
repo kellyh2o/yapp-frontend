@@ -124,7 +124,7 @@ export default function MainDisplay() {
         }}
       >
         <div className={classes.drawerHeader}>
-          <Typography align='center' variant="h5">
+          <Typography align='center' variant="subtitle1">
             Bike Park Reporter
           </Typography>
         </div>

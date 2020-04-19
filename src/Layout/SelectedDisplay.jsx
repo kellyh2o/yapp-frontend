@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Dashboard from "../Dashboard/Dashboard";
+import DashboardContainer from "../Dashboard/DashboardContainer";
 import UserProfile from "../Users/Components/UserProfile";
-import Settings from "../Settings/Components/Settings";
+import Settings from "../Settings/Settings";
 import { LocationsActions } from '../Locations/Store';
 import { setupDemoStore } from '../Redux/Store/setupDemoStore';
 import { UsersActions } from '../Users/Store';
@@ -23,7 +23,7 @@ class SelectedDisplay extends Component {
                 return <UserProfile />;
             case "Dashboard":
             default: 
-                return <Dashboard />;
+                return <DashboardContainer />;
         }
     }
 }

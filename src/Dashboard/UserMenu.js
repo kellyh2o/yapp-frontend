@@ -9,6 +9,7 @@ import MenuList from '@material-ui/core/MenuList';
 import { makeStyles } from '@material-ui/core/styles';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import IconButton from '@material-ui/core/IconButton';
+import { connect } from 'react-redux';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function MenuListComposition() {
+const UserMenu = (props) => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
@@ -69,8 +70,8 @@ export default function MenuListComposition() {
             <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                 <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <MenuItem onClick={handleClose}>Profile</MenuItem>
-                    <MenuItem onClick={handleClose}>My account</MenuItem>
+                    <MenuItem onClick={() => { props.selectView('UserProfile')}}>My Account</MenuItem>
+                    <MenuItem onClick={() => { props.selectView('Settings')}}>Settings</MenuItem>
                     <MenuItem onClick={handleClose}>Logout</MenuItem>
                 </MenuList>
                 </ClickAwayListener>
@@ -80,3 +81,19 @@ export default function MenuListComposition() {
     </div>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+      isDashboardSelected: state.selectedView === "Dashboard",
+      isUserProfileSelected: state.selectedView === "UserProfile",
+      isSettingsSelected: state.selectedView === "Settings",
+  };
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+      selectView: (view) => {dispatch({type: 'SELECT_VIEW', view: view})}
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserMenu);

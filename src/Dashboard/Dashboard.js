@@ -20,7 +20,7 @@ import { mainListItems, secondaryListItems } from './listItems';
 import Chart from './Chart';
 import Deposits from './Deposits';
 import Orders from './Orders';
-import AccountMenu from './AccountMenu';
+import UserMenu from './UserMenu';
 
 function Copyright() {
   return (
@@ -144,7 +144,7 @@ export default function Dashboard() {
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
             Dashboard
           </Typography>
-          <AccountMenu />
+          <UserMenu />
         </Toolbar>
       </AppBar>
       <Drawer

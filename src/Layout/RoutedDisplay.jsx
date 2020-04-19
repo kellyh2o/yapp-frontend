@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import LoginPage from "../Authentication/LoginPage";
 import RegisterPage from "../Authentication/RegisterPage";
-import MainDisplay from "../Layout/MainDisplay";
 import Dashboard from "../Dashboard/Dashboard";
 
 class RoutedDisplay extends Component {

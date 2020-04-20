@@ -22,15 +22,15 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import BarChartIcon from '@material-ui/icons/BarChart';
-function Copyright() {
+
+function Attribution() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright '}
+      {'Built by '}
       <Link color="inherit" href="https://github.com/kellyh2o">
         @kellyh2o
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
+      </Link>
+      .
     </Typography>
   );
 }
@@ -184,7 +184,7 @@ const MainDisplay = (props) => {
         <Container maxWidth="lg" className={classes.container}>
           <SelectedDisplay />
           <Box pt={4}>
-            <Copyright />
+            <Attribution />
           </Box>
         </Container>
       </main>

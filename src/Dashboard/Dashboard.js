@@ -3,9 +3,9 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import Chart from './Chart';
+import ChartTodayUsage from './ChartTodayUsage';
 import Deposits from './Deposits';
-import Orders from './Orders';
+import RecentJumpEvents from './RecentJumpEvents';
 
 const useStyles = makeStyles((theme) => ({  
   paper: {
@@ -28,7 +28,7 @@ export default function Dashboard() {
       {/* Chart */}
       <Grid item xs={12} md={8} lg={9}>
         <Paper className={fixedHeightPaper}>
-          <Chart />
+          <ChartTodayUsage />
         </Paper>
       </Grid>
       {/* Recent Deposits */}
@@ -37,10 +37,10 @@ export default function Dashboard() {
           <Deposits />
         </Paper>
       </Grid>
-      {/* Recent Orders */}
+      {/* Recent Jump Events */}
       <Grid item xs={12}>
         <Paper className={classes.paper}>
-          <Orders />
+          <RecentJumpEvents />
         </Paper>
       </Grid>
     </Grid>

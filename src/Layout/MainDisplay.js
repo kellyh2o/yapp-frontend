@@ -112,7 +112,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
   },
   fixedHeight: {
-    height: 240,
+    height: 250,
   },
 }));
 
@@ -141,7 +141,7 @@ const MainDisplay = (props) => {
             <MenuIcon />
           </IconButton>
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-            {props.selectedView === "Dashboard" ? "Dashboard" :
+            {props.selectedView === "Dashboard" ? `${props.demoLocationName}` :
             props.selectedView === "Reports" ? "Reports" :
             props.selectedView === "UserProfile" ? "My Account" :
             props.selectedView === "Settings" ? "Settings" : ""}
@@ -194,7 +194,8 @@ const MainDisplay = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        selectedView: state.selectedView
+        selectedView: state.selectedView,
+        demoLocationName: state.demoLocation ? state.demoLocation.name : ""
     };
 }
 

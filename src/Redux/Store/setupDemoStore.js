@@ -65,7 +65,7 @@ async function setupLocations(dispatch, token, data) {
                             {
                                 "riderMass": 187,
                                 "riderSpeed": 20.37,
-                                "timeStamp": new Date(now.getFullYear(), now.getMonth(), now.getDate(), 20, 30).toJSON(),
+                                "timeStamp": new Date(now.getFullYear(), now.getMonth(), now.getDate(), 20, 27).toJSON(),
                             },
                             {
                                 "riderMass": 250,

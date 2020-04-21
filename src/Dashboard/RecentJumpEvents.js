@@ -8,11 +8,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Title from './Title';
-
-// Generate Order Data
-function createData(id, date, jump, riderMass, riderSpeed) {
-  return { id, date, jump, riderMass, riderSpeed };
-}
+import moment from 'moment';
 
 
 function preventDefault(event) {
@@ -25,29 +21,40 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+function buildTableData(demoLocation) {
+
+    let tableData = [];
+        
+    if (demoLocation && demoLocation.jumps) {
+        const jumps = demoLocation.jumps;
+
+        jumps.forEach(jump => {
+            jump.events.forEach(jumpEvent => {
+
+                let customId = `${jump._id}-----${jumpEvent._id}`;
+
+                if (tableData.filter(data => data.id === customId).length === 0) {
+                    tableData.push({
+                        id: customId,
+                        date: new Date(jumpEvent.timeStamp),
+                        jump: jump.name,
+                        riderMass: jumpEvent.riderMass,
+                        riderSpeed: jumpEvent.riderSpeed
+                    });
+                }
+            });
+        });
+    }
+
+    return tableData.sort((x, y) => {
+        return y.date - x.date;
+    });
+}
+
 const RecentJumpEvents = (props) => {
     const classes = useStyles();
 
-    let tableData = [];
-    if (props.demoLocation && props.demoLocation.jumps) {
-        const jumps = props.demoLocation.jumps;
-
-        let eventData = [];
-        
-        jumps.forEach(jump => {
-            jump.events.forEach(event => {
-                eventData.push({
-                    id: event._id,
-                    date: event.timeStamp,
-                    jump: jump.name,
-                    riderMass: event.riderMass,
-                    riderSpeed: event.riderSpeed
-                });
-            });
-        });
-
-        tableData = eventData;
-    }
+    let tableData = buildTableData(props.demoLocation);
 
     return (
         <React.Fragment>
@@ -56,7 +63,7 @@ const RecentJumpEvents = (props) => {
             <TableHead>
             <TableRow>
                 <TableCell>Date</TableCell>
-                <TableCell>Jump</TableCell>
+                <TableCell>Jump Name</TableCell>
                 <TableCell>Rider Mass (lbs) </TableCell>
                 <TableCell>Rider Speed (mph) </TableCell>
             </TableRow>
@@ -65,21 +72,16 @@ const RecentJumpEvents = (props) => {
                 <TableBody>
                 {tableData.map(data => (
                     <TableRow key={data.id}>
-                    <TableCell>{data.date}</TableCell>
-                    <TableCell>{data.jump}</TableCell>
-                    <TableCell>{data.riderMass}</TableCell>
-                    <TableCell>{data.riderSpeed}</TableCell>
+                        <TableCell>{moment(data.date.toString()).calendar()}</TableCell>
+                        <TableCell>{data.jump}</TableCell>
+                        <TableCell>{data.riderMass}</TableCell>
+                        <TableCell>{data.riderSpeed}</TableCell>
                     </TableRow>
                 ))}
                 </TableBody>)
              : <TableBody />
             }
         </Table>
-        <div className={classes.seeMore}>
-            <Link color="primary" href="#" onClick={preventDefault}>
-            See more orders
-            </Link>
-        </div>
         </React.Fragment>
     );
 }

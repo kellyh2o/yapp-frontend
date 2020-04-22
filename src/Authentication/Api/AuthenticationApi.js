@@ -26,7 +26,32 @@ export class AuthenticationApi extends BaseClient {
         };
 
         const response = await this.instance.request(options);
-        return this.processLoginResponse(response);
+        return this.processResponse(response);
+    }
+
+    /**
+     * Logs out the user
+     * @param email The user's email address
+     * @param password The user's password
+     */
+    async logout(token) {
+
+        let url = this.baseUrl + "/auth/logout";
+        let data = {
+            token: token,
+        };
+
+        const options = {
+            method: "POST",
+            url,
+            headers: {
+                "Content-Type": "application/json",
+            },
+            data: data
+        };
+
+        const response = await this.instance.request(options);
+        return this.processResponse(response);
     }
 
 
@@ -57,24 +82,10 @@ export class AuthenticationApi extends BaseClient {
         };
 
         const response = await this.instance.request(options);
-        return this.processRegisterUserResponse(response);
+        return this.processResponse(response);
     }
 
-    processLoginResponse(response) {
-        const status = response.status;
-        switch(status) {
-            case 200:
-                const result200 = response.data;
-                return result200;
-            default:
-                this.handleGenericResponse(response);
-                break;
-        }
-
-        return null;
-    }
-
-    processRegisterUserResponse(response) {
+    processResponse(response) {
         const status = response.status;
         switch(status) {
             case 200:

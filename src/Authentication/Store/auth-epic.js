@@ -4,9 +4,6 @@ import { from, of } from 'rxjs';
 import { catchError, filter, map, switchMap, takeUntil } from 'rxjs/operators';
 import { isActionOf } from 'typesafe-actions';
 
-//import api from '../../Services';
-
-
 const api = new AuthenticationApi('http://localhost:3001/v1');
 
 export const loginUserEpic = action$ => action$.pipe(
@@ -16,6 +13,17 @@ export const loginUserEpic = action$ => action$.pipe(
             map(result => AuthActions.loginUser.success(result)),
             catchError(error => of(AuthActions.loginUser.failure(error))),
             takeUntil(action$.pipe(filter(isActionOf(AuthActions.loginUser.cancel))))
+        )
+    )
+);
+
+export const logoutUserEpic = action$ => action$.pipe(
+    filter(isActionOf(AuthActions.logoutUser.request)),
+    switchMap(action => 
+        from(api.logout(action.token)).pipe(
+            map(result => AuthActions.logoutUser.success(result)),
+            catchError(error => of(AuthActions.logoutUser.failure(error))),
+            takeUntil(action$.pipe(filter(isActionOf(AuthActions.logoutUser.cancel))))
         )
     )
 );

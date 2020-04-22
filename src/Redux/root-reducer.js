@@ -39,6 +39,14 @@ const rootReducer = (state, action) => {
       }
     }
 
+    case getType(AuthActions.logoutUser.success): {
+      return {
+        ...state,
+        isLoggedIn: false,
+        token: '',
+      }
+    }
+
     case getType(UsersActions.fetchMe.success): {
       return {
         ...state,

@@ -8,6 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import IconButton from '@material-ui/core/IconButton';
 import { connect } from 'react-redux';
+import { AuthActions } from '../../Authentication/Store';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -87,7 +88,10 @@ const UserMenu = (props) => {
                     }}>
                       Settings
                     </MenuItem>
-                    <MenuItem onClick={handleClose}>Logout</MenuItem>
+                    <MenuItem onClick={() => {
+                      props.logout(props.token);
+                      setOpen(false);
+                    }}>Logout</MenuItem>
                 </MenuList>
                 </ClickAwayListener>
             </Paper>
@@ -102,12 +106,16 @@ const mapStateToProps = (state) => {
       isDashboardSelected: state.selectedView === "Dashboard",
       isUserProfileSelected: state.selectedView === "UserProfile",
       isSettingsSelected: state.selectedView === "Settings",
+      token: state.token
   };
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-      selectView: (view) => {dispatch({type: 'SELECT_VIEW', view: view})}
+      selectView: (view) => {dispatch({type: 'SELECT_VIEW', view: view})},
+      logout: (token) => {
+        dispatch(AuthActions.logoutUser.request(token));
+      }
   }
 }
 

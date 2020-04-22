@@ -1,7 +1,5 @@
 import React from 'react';
 import { connect } from "react-redux";
-import Link from '@material-ui/core/Link';
-import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -9,17 +7,6 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Title from './Title';
 import moment from 'moment';
-
-
-function preventDefault(event) {
-  event.preventDefault();
-}
-
-const useStyles = makeStyles((theme) => ({
-  seeMore: {
-    marginTop: theme.spacing(3),
-  },
-}));
 
 function buildTableData(demoLocation) {
 
@@ -52,7 +39,6 @@ function buildTableData(demoLocation) {
 }
 
 const RecentJumpEvents = (props) => {
-    const classes = useStyles();
 
     let tableData = buildTableData(props.demoLocation);
 

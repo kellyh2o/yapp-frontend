@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import ChartTodayUsage from './ChartTodayUsage';
-import Deposits from './Deposits';
+import MostPopularJump from './MostPopularJump';
 import RecentJumpEvents from './RecentJumpEvents';
 
 const useStyles = makeStyles((theme) => ({  
@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
   },
   fixedHeight: {
-    height: 250,
+    height: 251,
   },
 }));
 
@@ -31,10 +31,10 @@ export default function Dashboard() {
           <ChartTodayUsage />
         </Paper>
       </Grid>
-      {/* Recent Deposits */}
+      {/* Most Popular Jump */}
       <Grid item xs={12} md={4} lg={3}>
         <Paper className={fixedHeightPaper}>
-          <Deposits />
+          <MostPopularJump />
         </Paper>
       </Grid>
       {/* Recent Jump Events */}

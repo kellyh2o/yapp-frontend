@@ -99,10 +99,10 @@ const mapStateToProps = (state) => {
     };
   }
   
-  const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
     return {
         selectView: (view) => {dispatch({type: 'SELECT_VIEW', view: view})}
     }
-  }
-  
-  export default connect(mapStateToProps, mapDispatchToProps)(ChartTodayUsage);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ChartTodayUsage);

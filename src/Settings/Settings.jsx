@@ -31,7 +31,7 @@ const Settings = (props) => {
   return (
 
     <Grid container spacing={3}>
-      <Grid item xs={12} md={8} lg={9}>
+      <Grid item style={{width: "100%"}}>
         <Paper className={classes.paper}>
           <div style={{width: "auto", margin: "auto"}}>
             <Title>

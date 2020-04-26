@@ -63,7 +63,7 @@ const ChartTodayUsage = (props) => {
 
     return (
         <React.Fragment>
-        <Title>Today</Title>
+        <Title>Peak Times</Title>
         <ResponsiveContainer>
             <LineChart
             data={jumpData}

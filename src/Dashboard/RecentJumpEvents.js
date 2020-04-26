@@ -58,7 +58,7 @@ const RecentJumpEvents = (props) => {
                 <TableBody>
                 {tableData.map(data => (
                     <TableRow key={data.id}>
-                        <TableCell>{moment(data.date.toString()).calendar()}</TableCell>
+                        <TableCell>{moment(data.date).calendar()}</TableCell>
                         <TableCell>{data.jump}</TableCell>
                         <TableCell>{data.riderMass}</TableCell>
                         <TableCell>{data.riderSpeed}</TableCell>

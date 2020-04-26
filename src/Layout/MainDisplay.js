@@ -141,7 +141,7 @@ const MainDisplay = (props) => {
             <MenuIcon />
           </IconButton>
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-            {props.selectedView === "Dashboard" ? `${props.demoLocationName}` :
+            {props.selectedView === "Dashboard" ? "Dashboard" :
             props.selectedView === "Reports" ? "Reports" :
             props.selectedView === "UserProfile" ? "My Account" :
             props.selectedView === "Settings" ? "Settings" : ""}

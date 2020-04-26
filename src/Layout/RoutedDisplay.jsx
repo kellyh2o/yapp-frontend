@@ -22,7 +22,6 @@ class RoutedDisplay extends Component {
 const mapStateToProps = (state) => {
     return {
         isLoggedIn: state.isLoggedIn,
-        isNewRegistrationSuccess: state.isNewRegistrationSuccess,
         showLoginPage: state.showLoginPage
     };
 }

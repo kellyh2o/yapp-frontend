@@ -14,7 +14,6 @@ export const epicMiddleware = createEpicMiddleware();
 // rehydrate state on app start
 const initialState = {
   selectedView: "Dashboard",
-  isNewRegistrationSuccess: false,
   isLoggedIn: false,
   token: null,
   locations: null,

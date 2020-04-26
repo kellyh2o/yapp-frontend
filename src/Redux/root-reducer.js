@@ -12,21 +12,24 @@ const rootReducer = (state, action) => {
     case AuthActions.viewRegisterPage: {
       return {
         ...state,
-        showLoginPage: false
+        showLoginPage: false,
+        registerErrorMessage: null,
+        loginErrorMessage: null
       }
     }
 
     case AuthActions.viewLoginPage: {
       return {
         ...state,
-        showLoginPage: true
+        showLoginPage: true,
+        registerErrorMessage: null,
+        loginErrorMessage: null
       }
     }
 
     case getType(AuthActions.registerUser.success): {
       return {
         ...state,
-        isNewRegistrationSuccess: true,
         showLoginPage: true,
         registerErrorMessage: null
       }
@@ -35,7 +38,6 @@ const rootReducer = (state, action) => {
     case getType(AuthActions.registerUser.failure): {
       return {
         ...state,
-        isNewRegistrationSuccess: false,
         registerErrorMessage: action.payload.response.data.msg
       }
     }
@@ -63,6 +65,7 @@ const rootReducer = (state, action) => {
         ...state,
         isLoggedIn: false,
         token: '',
+        updateMeErrorMessage: null
       }
     }
 
@@ -77,6 +80,14 @@ const rootReducer = (state, action) => {
       return {
         ...state,
         me: action.payload,
+        updateMeErrorMessage: null
+      }
+    }
+
+    case getType(UsersActions.updateMe.failure): {
+      return {
+        ...state,
+        updateMeErrorMessage: action.payload.response.data.msg
       }
     }
 
@@ -100,7 +111,8 @@ const rootReducer = (state, action) => {
       const selectedView = action.view;
       return {
         ...state,
-        selectedView
+        selectedView,
+        updateMeErrorMessage: null
       }
     }
 

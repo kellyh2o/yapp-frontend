@@ -7,6 +7,8 @@ import Title from '../../Dashboard/Title';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
+import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({  
   paper: {
@@ -89,6 +91,14 @@ const UserProfile = (props) => {
                 style={{width: "300px", marginTop: "10px", marginBottom: "10px"}}>
               Update Account
             </Button>
+            {props.updateMeFailure ? (
+                <Box style={{paddingTop: "20px", width: "300px"}}>
+                    <Typography color="error" align="center">
+                        {props.updateMeErrorMessage}
+                    </Typography>
+                </Box>
+            ) : <div />
+            }
           </form>
         </Paper>
       </Grid>
@@ -103,6 +113,8 @@ const mapStateToProps = (state) => {
     lastName: state.me ? state.me.lastName : null,
     email: state.me ? state.me.email : null,
     username: state.me ? state.me.username : null,
+    updateMeErrorMessage: state.updateMeErrorMessage,
+    updateMeFailure: state.updateMeErrorMessage !== null
   };
 }
 

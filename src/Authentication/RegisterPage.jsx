@@ -56,121 +56,117 @@ const RegisterPage = (props) => {
         event.preventDefault();
     };
 
-    if (props.isNewRegistrationSuccess) {
-        return (<RoutedDisplay />);
-    }
-    else {
-        return(
-            <div>
-                <Container maxWidth="sm">
-                    <Grid 
-                        container
-                        justify="center"
-                        style={{paddingTop: "30px"}}
-                    >
-                        <Grid item>
-                            <Box style={{padding: "20px", margin: "20px", border: "1px lightgrey solid", borderRadius: "5px"}}>
-                                <Box style={{paddingTop: "10px", textAlign: "center"}}>
-                                    <Typography variant="h4">Bike Park Reporter</Typography>
-                                </Box>
-                                <form autoComplete="off" style={{padding: "20px", margin: "auto", width: "320px"}}>
-                                    <TextField
-                                        id="firstname-input"
-                                        label="First Name"
-                                        type="username"
-                                        variant="outlined"
-                                        onChange={(event) => setFirstName(event.target.value)}
-                                        style={{width: "300px", margin: "10px"}}
-                                    />
-                                    <TextField
-                                        id="lastname-input"
-                                        label="Last Name"
-                                        type="username"
-                                        variant="outlined"
-                                        onChange={(event) => setLastName(event.target.value)}
-                                        style={{width: "300px", margin: "10px"}}
-                                    />
-                                    <TextField
-                                        id="email-input"
-                                        label="Email"
-                                        type="username"
-                                        variant="outlined"
-                                        onChange={(event) => setEmail(event.target.value)}
-                                        style={{width: "300px", margin: "10px"}}
-                                    />
-                                    <TextField
-                                        id="username-input"
-                                        label="Username"
-                                        type="username"
-                                        variant="outlined"
-                                        onChange={(event) => setUsername(event.target.value)}
-                                        style={{width: "300px", margin: "10px"}}
-                                    />
-                                    <FormControl className={clsx(classes.margin, classes.textField)} variant="outlined">
-                                        <InputLabel htmlFor="password-input">Password</InputLabel>
-                                        <OutlinedInput
-                                            id="password-input"
-                                            type={showPassword ? 'text' : 'password'}
-                                            onChange={(event) => setPassword(event.target.value)}
-                                            endAdornment={
-                                            <InputAdornment position="end">
-                                                <IconButton
-                                                    aria-label="toggle password visibility"
-                                                    onClick={handleClickShowPassword}
-                                                    onMouseDown={handleMouseDownPassword}
-                                                    edge="end"
-                                                >
-                                                {showPassword ? <Visibility /> : <VisibilityOff />}
-                                                </IconButton>
-                                            </InputAdornment>
-                                            }
-                                            labelWidth={70}
-                                            style={{width: "300px", marginLeft: "2px", borderBottom: "none !important"}}
-                                        />
-                                    </FormControl>
-                                    <br />
-                                    <Button 
-                                        variant="contained" 
-                                        color="primary"
-                                        disabled={firstName === "" || lastName === "" || email === "" || username === "" || password === ""}
-                                        onClick={() => {
-                                            props.registerUser(firstName, lastName, email, username, password);
-                                        }}
-                                        style={{width: "300px", margin: "10px"}}>
-                                    Sign Up
-                                    </Button>
-                                    {props.registerFailure ? (
-                                        <Box style={{paddingTop: "20px"}}>
-                                            <Typography color="error" align="center">
-                                                {props.registerErrorMessage}
-                                            </Typography>
-                                        </Box>
-                                    ) : <div />
-                                    }
-                                </form>
+
+    return(
+        <div>
+            <Container maxWidth="sm">
+                <Grid 
+                    container
+                    justify="center"
+                    style={{paddingTop: "30px"}}
+                >
+                    <Grid item>
+                        <Box style={{padding: "20px", margin: "20px", border: "1px lightgrey solid", borderRadius: "5px"}}>
+                            <Box style={{paddingTop: "10px", textAlign: "center"}}>
+                                <Typography variant="h4">Bike Park Reporter</Typography>
                             </Box>
-                            <Box style={{padding: "20px", margin: "20px", border: "1px lightgrey solid", borderRadius: "5px", textAlign: "center"}}>
-                                <Typography>
-                                    Have an account? 
-                                    <Button 
-                                        color="primary"
-                                        onClick={() => props.viewLoginPage()}
-                                    >
-                                        Log in
-                                    </Button>
-                                </Typography>
-                            </Box>
-                        </Grid>
+                            <form autoComplete="off" style={{padding: "20px", margin: "auto", width: "320px"}}>
+                                <TextField
+                                    id="firstname-input"
+                                    label="First Name"
+                                    type="username"
+                                    variant="outlined"
+                                    onChange={(event) => setFirstName(event.target.value)}
+                                    style={{width: "300px", margin: "10px"}}
+                                />
+                                <TextField
+                                    id="lastname-input"
+                                    label="Last Name"
+                                    type="username"
+                                    variant="outlined"
+                                    onChange={(event) => setLastName(event.target.value)}
+                                    style={{width: "300px", margin: "10px"}}
+                                />
+                                <TextField
+                                    id="email-input"
+                                    label="Email"
+                                    type="username"
+                                    variant="outlined"
+                                    onChange={(event) => setEmail(event.target.value)}
+                                    style={{width: "300px", margin: "10px"}}
+                                />
+                                <TextField
+                                    id="username-input"
+                                    label="Username"
+                                    type="username"
+                                    variant="outlined"
+                                    onChange={(event) => setUsername(event.target.value)}
+                                    style={{width: "300px", margin: "10px"}}
+                                />
+                                <FormControl className={clsx(classes.margin, classes.textField)} variant="outlined">
+                                    <InputLabel htmlFor="password-input">Password</InputLabel>
+                                    <OutlinedInput
+                                        id="password-input"
+                                        type={showPassword ? 'text' : 'password'}
+                                        onChange={(event) => setPassword(event.target.value)}
+                                        endAdornment={
+                                        <InputAdornment position="end">
+                                            <IconButton
+                                                aria-label="toggle password visibility"
+                                                onClick={handleClickShowPassword}
+                                                onMouseDown={handleMouseDownPassword}
+                                                edge="end"
+                                            >
+                                            {showPassword ? <Visibility /> : <VisibilityOff />}
+                                            </IconButton>
+                                        </InputAdornment>
+                                        }
+                                        labelWidth={70}
+                                        style={{width: "300px", marginLeft: "2px", borderBottom: "none !important"}}
+                                    />
+                                </FormControl>
+                                <br />
+                                <Button 
+                                    variant="contained" 
+                                    color="primary"
+                                    disabled={firstName === "" || lastName === "" || email === "" || username === "" || password === ""}
+                                    onClick={() => {
+                                        props.registerUser(firstName, lastName, email, username, password);
+                                    }}
+                                    style={{width: "300px", margin: "10px"}}>
+                                Sign Up
+                                </Button>
+                                {props.registerFailure ? (
+                                    <Box style={{paddingTop: "20px"}}>
+                                        <Typography color="error" align="center">
+                                            {props.registerErrorMessage}
+                                        </Typography>
+                                    </Box>
+                                ) : <div />
+                                }
+                            </form>
+                        </Box>
+                        <Box style={{padding: "20px", margin: "20px", border: "1px lightgrey solid", borderRadius: "5px", textAlign: "center"}}>
+                            <Typography>
+                                Have an account? 
+                                <Button 
+                                    color="primary"
+                                    onClick={() => props.viewLoginPage()}
+                                >
+                                    Log in
+                                </Button>
+                            </Typography>
+                        </Box>
                     </Grid>
-                </Container>
-            </div>
-        );
-    }     
+                </Grid>
+            </Container>
+        </div>
+    );
+
 }
 
 const mapStateToProps = (state) => {
     return {
-        isNewRegistrationSuccess: state.isNewRegistrationSuccess,
         registerErrorMessage: state.registerErrorMessage,
         registerFailure: state.registerErrorMessage !== null
     };

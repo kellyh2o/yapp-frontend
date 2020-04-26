@@ -4,24 +4,15 @@ import { BaseClient } from "../../Services/BaseClient";
 export class AuthenticationApi extends BaseClient {
 
     /**
-     * Constructs the authentication api
-     * @param baseUrl The base url of the api ex. http://localhost:3000/v1
-     * @param instance The instantiated api, if available
-     */
-    constructor(baseUrl, instance) {
-        super(baseUrl, instance);
-    }
-
-    /**
      * Logs in the user
      * @param email The user's email address
      * @param password The user's password
      */
-    async login(email, password) {
+    async login(username, password) {
 
         let url = this.baseUrl + "/auth/login";
         let data = {
-            email: email,
+            username: username,
             password: password
         };
 
@@ -35,7 +26,32 @@ export class AuthenticationApi extends BaseClient {
         };
 
         const response = await this.instance.request(options);
-        return this.processLoginResponse(response);
+        return this.processResponse(response);
+    }
+
+    /**
+     * Logs out the user
+     * @param email The user's email address
+     * @param password The user's password
+     */
+    async logout(token) {
+
+        let url = this.baseUrl + "/auth/logout";
+        let data = {
+            token: token,
+        };
+
+        const options = {
+            method: "POST",
+            url,
+            headers: {
+                "Content-Type": "application/json",
+            },
+            data: data
+        };
+
+        const response = await this.instance.request(options);
+        return this.processResponse(response);
     }
 
 
@@ -46,12 +62,13 @@ export class AuthenticationApi extends BaseClient {
      * @param email The email address of the new user
      * @param password The password of the new user
      */
-    async registerUser(firstName, lastName, email, password) {
+    async registerUser(firstName, lastName, email, username, password) {
         let url = this.baseUrl + "/auth/register";
         let data = {
             firstName: firstName,
             lastName: lastName,
             email: email,
+            username: username,
             password: password
         };
 
@@ -65,24 +82,10 @@ export class AuthenticationApi extends BaseClient {
         };
 
         const response = await this.instance.request(options);
-        return this.processRegisterUserResponse(response);
+        return this.processResponse(response);
     }
 
-    processLoginResponse(response) {
-        const status = response.status;
-        switch(status) {
-            case 200:
-                const result200 = response.data;
-                return result200;
-            default:
-                this.handleGenericResponse(response);
-                break;
-        }
-
-        return null;
-    }
-
-    processRegisterUserResponse(response) {
+    processResponse(response) {
         const status = response.status;
         switch(status) {
             case 200:

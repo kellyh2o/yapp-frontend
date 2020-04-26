@@ -1,4 +1,4 @@
-import { createAsyncAction, createStandardAction } from 'typesafe-actions';
+import { createAsyncAction } from 'typesafe-actions';
 
 export const FETCH_USERS = "users/FETCH_USERS";
 export const FETCH_USERS_SUCCESS = "users/FETCH_USERS_SUCCESS";
@@ -10,6 +10,17 @@ export const FETCH_USER_SUCCESS = "users/FETCH_USER_SUCCESS";
 export const FETCH_USER_FAILURE = "users/FETCH_USER_FAILURE";
 export const FETCH_USER_CANCEL = "users/FETCH_USER_CANCEL";
 
+export const FETCH_ME = "users/FETCH_ME";
+export const FETCH_ME_SUCCESS = "users/FETCH_ME_SUCCESS";
+export const FETCH_ME_FAILURE = "users/FETCH_ME_FAILURE";
+export const FETCH_ME_CANCEL = "users/FETCH_ME_CANCEL";
+
+export const UPDATE_ME = "users/UPDATE_ME";
+export const UPDATE_ME_SUCCESS = "users/UPDATE_ME_SUCCESS";
+export const UPDATE_ME_FAILURE = "users/UPDATE_ME_FAILURE";
+export const UPDATE_ME_CANCEL = "users/UPDATE_ME_CANCEL";
+
+
 export const fetchUsers = createAsyncAction(
     FETCH_USERS,
     FETCH_USERS_SUCCESS,
@@ -17,9 +28,17 @@ export const fetchUsers = createAsyncAction(
     FETCH_USERS_CANCEL
 )();
 
-export const fetchUser = createAsyncAction(
-    FETCH_USER,
-    FETCH_USER_SUCCESS,
-    FETCH_USER_FAILURE,
-    FETCH_USER_CANCEL
+export const fetchMe = createAsyncAction(
+    FETCH_ME,
+    FETCH_ME_SUCCESS,
+    FETCH_ME_FAILURE,
+    FETCH_ME_CANCEL
 )();
+
+export const updateMe = createAsyncAction(
+    UPDATE_ME,
+    UPDATE_ME_SUCCESS,
+    UPDATE_ME_FAILURE,
+    UPDATE_ME_CANCEL
+)();
+

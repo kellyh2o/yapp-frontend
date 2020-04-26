@@ -2,14 +2,9 @@
 import { BaseClient } from "../../Services/BaseClient";
 
 export class JumpsApi extends BaseClient {
-
-    constructor(baseUrl, instance) {
-        super(baseUrl, instance);
-    }
-
     /**
-     * Retrieves a list of jumps for a given project
-     * @param projectId The unique id of the project
+     * Retrieves a list of jumps for a given location
+     * @param locationId The unique id of the location
      */
     async getAllJumps(token, locationId) {
         let url = this.baseUrl + "/locations/{locationId}/jumps";
@@ -20,7 +15,7 @@ export class JumpsApi extends BaseClient {
             url,
             headers: {
                 Accept: "application/json",
-                "auth-token": token,
+                Authorization: "Bearer " + token,
             },
         };
 
@@ -29,26 +24,52 @@ export class JumpsApi extends BaseClient {
     }
 
     /**
-     * Retrieves a specific jump under a given project
-     * @param projectId The unique id of the project
+     * Retrieves a specific jump under a given location
+     * @param locationId The unique id of the location
      * @param jumpId The unique id of the jump
      */
-    async getJump(token, projectId, jumpId) {
+    async getJump(token, locationId, jumpId) {
         let url = this.baseUrl + "/locations/{locationId}/jumps/{jumpId}";
-        url = url.replace("{locationId}", encodeURIComponent(projectId));
+        url = url.replace("{locationId}", encodeURIComponent(locationId));
         url = url.replace("{jumpId}", encodeURIComponent(jumpId));
 
         const options = {
             method: "GET",
             url,
             headers: {
-                //Authorization: "Bearer " + LoginContainer.Instance.Token,
                 Accept: "application/json",
+                Authorization: "Bearer " + token,
             },
         };
 
         const response = await this.instance.request(options);
-        return this.processJumps(response);
+        return this.processGetJump(response);
+    }
+
+    /**
+     * Creates a specific jump under a given location
+     * @param locationId The unique id of the location
+     * @param jumpId The unique id of the jump
+     */
+    async createJump(token, locationId, jumpName) {
+        let url = this.baseUrl + "/locations/{locationId}/jumps";
+        url = url.replace("{locationId}", encodeURIComponent(locationId));
+
+        const data = {
+            name: jumpName
+        };
+
+        const options = {
+            method: "POST",
+            url,
+            headers: {
+                Accept: "application/json",
+            },
+            data: data
+        };
+
+        const response = await this.instance.request(options);
+        return this.processCreateJump(response);
     }
 
     processGetAllJumps(response) {
@@ -65,7 +86,21 @@ export class JumpsApi extends BaseClient {
         return null;
     }
 
-    processjumps(response) {
+    processGetJump(response) {
+        const status = response.status;
+        switch(status) {
+            case 200:
+                const result200 = response.data;
+                return result200;
+            default:
+                this.handleGenericResponse(response);
+                break;
+        }
+
+        return null;
+    }
+
+    processCreateJump(response) {
         const status = response.status;
         switch(status) {
             case 200:

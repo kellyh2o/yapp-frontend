@@ -1,0 +1,357 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainDisplay should render 1`] = `
+<DocumentFragment>
+  <div
+    class="makeStyles-root-1"
+  >
+    <header
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionAbsolute MuiAppBar-colorPrimary makeStyles-appBar-4 makeStyles-appBarShift-5 MuiPaper-elevation4"
+    >
+      <div
+        class="MuiToolbar-root MuiToolbar-regular makeStyles-toolbar-2 MuiToolbar-gutters"
+      >
+        <button
+          aria-label="open drawer"
+          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-6 makeStyles-menuButtonHidden-7 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+        <h1
+          class="MuiTypography-root makeStyles-title-8 MuiTypography-h6 MuiTypography-colorInherit MuiTypography-noWrap"
+        />
+        <div
+          class="makeStyles-root-110"
+        >
+          <div>
+            <button
+              aria-haspopup="true"
+              class="MuiButtonBase-root MuiIconButton-root makeStyles-normalButton-112 makeStyles-normalButton-113 MuiIconButton-colorInherit"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiIconButton-label"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div
+      class="MuiDrawer-root MuiDrawer-docked"
+    >
+      <div
+        class="MuiPaper-root MuiDrawer-paper makeStyles-drawerPaper-9 MuiDrawer-paperAnchorLeft MuiDrawer-paperAnchorDockedLeft MuiPaper-elevation0"
+      >
+        <div
+          class="makeStyles-toolbarIcon-3"
+        >
+          <button
+            class="MuiButtonBase-root MuiIconButton-root"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                />
+              </svg>
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+        </div>
+        <hr
+          class="MuiDivider-root"
+        />
+        <ul
+          class="MuiList-root MuiList-padding"
+        >
+          <div>
+            <div
+              aria-disabled="false"
+              class="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button"
+              role="button"
+              tabindex="0"
+            >
+              <div
+                class="MuiListItemIcon-root"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"
+                  />
+                </svg>
+              </div>
+              <div
+                class="MuiListItemText-root"
+              >
+                <span
+                  class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+                >
+                  Dashboard
+                </span>
+              </div>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </div>
+            <div
+              aria-disabled="false"
+              class="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button"
+              role="button"
+              tabindex="0"
+            >
+              <div
+                class="MuiListItemIcon-root"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M5 9.2h3V19H5zM10.6 5h2.8v14h-2.8zm5.6 8H19v6h-2.8z"
+                  />
+                </svg>
+              </div>
+              <div
+                class="MuiListItemText-root"
+              >
+                <span
+                  class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+                >
+                  Reports
+                </span>
+              </div>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <main
+      class="makeStyles-content-12"
+    >
+      <div
+        class="makeStyles-appBarSpacer-11"
+      />
+      <div
+        class="MuiContainer-root makeStyles-container-13 MuiContainer-maxWidthLg"
+      >
+        <div>
+          <div
+            class="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
+            style="margin-bottom: 20px; padding: 20px;"
+          >
+            <h2
+              class="MuiTypography-root MuiTypography-h6 MuiTypography-colorPrimary MuiTypography-gutterBottom"
+            >
+              Location
+            </h2>
+            <p
+              class="MuiTypography-root MuiTypography-h4"
+              style="padding-top: 20px;"
+            >
+              Hogwarts
+            </p>
+          </div>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-8 MuiGrid-grid-lg-9"
+            >
+              <div
+                class="MuiPaper-root makeStyles-paper-164 makeStyles-fixedHeight-165 MuiPaper-elevation1 MuiPaper-rounded"
+              >
+                <h2
+                  class="MuiTypography-root MuiTypography-h6 MuiTypography-colorPrimary MuiTypography-gutterBottom"
+                >
+                  Peak Times
+                </h2>
+                <div
+                  class="recharts-responsive-container"
+                  style="width: 100%; height: 100%;"
+                >
+                  <div
+                    style="position: absolute; width: 0px; height: 0px; visibility: hidden; display: none;"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-3"
+            >
+              <div
+                class="MuiPaper-root makeStyles-paper-164 makeStyles-fixedHeight-165 MuiPaper-elevation1 MuiPaper-rounded"
+              >
+                <h2
+                  class="MuiTypography-root MuiTypography-h6 MuiTypography-colorPrimary MuiTypography-gutterBottom"
+                >
+                  Today's Most Popular Jump
+                </h2>
+                <p
+                  class="MuiTypography-root MuiTypography-h4"
+                  style="padding-top: 20px;"
+                >
+                  Jump3
+                </p>
+                <p
+                  class="MuiTypography-root makeStyles-depositContext-269 MuiTypography-body1 MuiTypography-colorTextSecondary"
+                  style="padding-top: 20px; padding-left: 5px;"
+                >
+                  1 Hits Today
+                </p>
+              </div>
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+            >
+              <div
+                class="MuiPaper-root makeStyles-paper-164 MuiPaper-elevation1 MuiPaper-rounded"
+              >
+                <h2
+                  class="MuiTypography-root MuiTypography-h6 MuiTypography-colorPrimary MuiTypography-gutterBottom"
+                >
+                  Recent Jump Events
+                </h2>
+                <table
+                  class="MuiTable-root"
+                >
+                  <thead
+                    class="MuiTableHead-root"
+                  >
+                    <tr
+                      class="MuiTableRow-root MuiTableRow-head"
+                    >
+                      <th
+                        class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+                        scope="col"
+                      >
+                        Date
+                      </th>
+                      <th
+                        class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+                        scope="col"
+                      >
+                        Jump Name
+                      </th>
+                      <th
+                        class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+                        scope="col"
+                      >
+                        Rider Mass (lbs) 
+                      </th>
+                      <th
+                        class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+                        scope="col"
+                      >
+                        Rider Speed (mph) 
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="MuiTableBody-root"
+                  >
+                    <tr
+                      class="MuiTableRow-root"
+                    >
+                      <td
+                        class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+                      >
+                        Invalid date
+                      </td>
+                      <td
+                        class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+                      >
+                        Jump3
+                      </td>
+                      <td
+                        class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+                      >
+                        22
+                      </td>
+                      <td
+                        class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+                      >
+                        12
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="MuiBox-root MuiBox-root-292"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
+          >
+            Built by 
+            <a
+              class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorInherit"
+              href="https://github.com/kellyh2o"
+            >
+              @kellyh2o
+            </a>
+            .
+          </p>
+        </div>
+      </div>
+    </main>
+  </div>
+</DocumentFragment>
+`;

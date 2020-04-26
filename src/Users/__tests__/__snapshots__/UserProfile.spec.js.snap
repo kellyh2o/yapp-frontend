@@ -1,0 +1,192 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserProfile should render 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-item"
+      style="width: 100%;"
+    >
+      <div
+        class="MuiPaper-root makeStyles-paper-1 MuiPaper-elevation1 MuiPaper-rounded"
+      >
+        <div
+          style="width: auto; margin: auto;"
+        >
+          <h2
+            class="MuiTypography-root MuiTypography-h6 MuiTypography-colorPrimary MuiTypography-gutterBottom"
+          >
+            My Account
+          </h2>
+        </div>
+        <form
+          autocomplete="off"
+          style="padding-top: 20px; padding-bottom: 20px; width: auto; margin: auto;"
+        >
+          <div
+            class="MuiFormControl-root MuiTextField-root"
+            style="width: 300px; margin-top: 10px; margin-bottom: 10px;"
+          >
+            <label
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined"
+              data-shrink="false"
+            >
+              First Name
+            </label>
+            <div
+              class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInputBase-input MuiOutlinedInput-input"
+                type="username"
+                value=""
+              />
+              <fieldset
+                aria-hidden="true"
+                class="PrivateNotchedOutline-root-221 MuiOutlinedInput-notchedOutline"
+              >
+                <legend
+                  class="PrivateNotchedOutline-legendLabelled-223"
+                >
+                  <span>
+                    First Name
+                  </span>
+                </legend>
+              </fieldset>
+            </div>
+          </div>
+          <br />
+          <div
+            class="MuiFormControl-root MuiTextField-root"
+            style="width: 300px; margin-top: 10px; margin-bottom: 10px;"
+          >
+            <label
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined"
+              data-shrink="false"
+            >
+              Last Name
+            </label>
+            <div
+              class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInputBase-input MuiOutlinedInput-input"
+                type="username"
+                value=""
+              />
+              <fieldset
+                aria-hidden="true"
+                class="PrivateNotchedOutline-root-221 MuiOutlinedInput-notchedOutline"
+              >
+                <legend
+                  class="PrivateNotchedOutline-legendLabelled-223"
+                >
+                  <span>
+                    Last Name
+                  </span>
+                </legend>
+              </fieldset>
+            </div>
+          </div>
+          <br />
+          <div
+            class="MuiFormControl-root MuiTextField-root"
+            style="width: 300px; margin-top: 10px; margin-bottom: 10px;"
+          >
+            <label
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined"
+              data-shrink="false"
+            >
+              Email
+            </label>
+            <div
+              class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInputBase-input MuiOutlinedInput-input"
+                type="username"
+                value=""
+              />
+              <fieldset
+                aria-hidden="true"
+                class="PrivateNotchedOutline-root-221 MuiOutlinedInput-notchedOutline"
+              >
+                <legend
+                  class="PrivateNotchedOutline-legendLabelled-223"
+                >
+                  <span>
+                    Email
+                  </span>
+                </legend>
+              </fieldset>
+            </div>
+          </div>
+          <br />
+          <div
+            class="MuiFormControl-root MuiTextField-root"
+            style="width: 300px; margin-top: 10px; margin-bottom: 10px;"
+          >
+            <label
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined"
+              data-shrink="false"
+            >
+              Username
+            </label>
+            <div
+              class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInputBase-input MuiOutlinedInput-input"
+                type="username"
+                value=""
+              />
+              <fieldset
+                aria-hidden="true"
+                class="PrivateNotchedOutline-root-221 MuiOutlinedInput-notchedOutline"
+              >
+                <legend
+                  class="PrivateNotchedOutline-legendLabelled-223"
+                >
+                  <span>
+                    Username
+                  </span>
+                </legend>
+              </fieldset>
+            </div>
+          </div>
+          <br />
+          <button
+            class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+            style="width: 300px; margin-top: 10px; margin-bottom: 10px;"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiButton-label"
+            >
+              Update Account
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+          <div
+            class="MuiBox-root MuiBox-root-258"
+            style="padding-top: 20px; width: 300px;"
+          >
+            <p
+              class="MuiTypography-root MuiTypography-body1 MuiTypography-colorError MuiTypography-alignCenter"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

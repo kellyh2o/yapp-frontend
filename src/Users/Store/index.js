@@ -1,2 +1,5 @@
-export * as UserActions from './users-actions';
-export * as UserEpic from './users-epic';
+import * as Actions from './users-actions';
+import * as Epic from './users-epic';
+
+export { Actions as UsersActions };
+export { Epic as UsersEpic };

@@ -2,6 +2,8 @@
 
 The Bike Park Reporter (BPR) is a dynamic web app used for monitoring the usage of bike jumps throughout a bike park. Users may use the system to register a new user, log in, change their password, and view data about mountain bike jumps.
 
+For demo purposes, the data currently found in the app is posted to the back-end upon startup. Its purely demo data, and is meant to demonstrate the dashboard and reporting capabilities of the app.
+
 The frontend of the BPR provides an extensible UI built with React/Redux that allows a user to navigate throughout the system. React is used to build the HTML/Javascript in the app, while Redux is used to provide state. It is styled using [Material-UI](https://material-ui.com/), a popular React UI framework.
 
 

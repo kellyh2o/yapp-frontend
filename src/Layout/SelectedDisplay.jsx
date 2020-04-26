@@ -1,11 +1,20 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Dashboard from "../Dashboard/Components/Dashboard";
+import Dashboard from "../Dashboard/Dashboard";
+import Reports from "../Reports/Reports";
 import UserProfile from "../Users/Components/UserProfile";
-import Settings from "../Settings/Components/Settings";
+import Settings from "../Settings/Settings";
+import { LocationsActions } from '../Locations/Store';
+import { setupDemoStore } from '../Redux/Store/setupDemoStore';
+import { UsersActions } from '../Users/Store';
 
 
 class SelectedDisplay extends Component {
+    componentDidMount() {
+        this.props.setupDemoStore(this.props.token);
+        this.props.getLocations(this.props.token);
+        this.props.fetchMe(this.props.token);
+    }
 
     render() {
         switch (this.props.selectedView) {
@@ -13,6 +22,8 @@ class SelectedDisplay extends Component {
                 return <Settings />;
             case "UserProfile":
                 return <UserProfile />;
+            case "Reports":
+                return <Reports />;
             case "Dashboard":
             default: 
                 return <Dashboard />;
@@ -23,7 +34,20 @@ class SelectedDisplay extends Component {
 const mapStateToProps = (state) => {
     return {
         selectedView: state.selectedView,
+        token: state.token,
     };
 }
 
-export default connect(mapStateToProps)(SelectedDisplay);
+const mapDispatchToProps = (dispatch) => ({
+    getLocations: (token) => {
+      dispatch(LocationsActions.fetchLocations.request(token));
+    },
+    setupDemoStore: (token) => {
+        setupDemoStore(dispatch, token);
+    },
+    fetchMe: (token) => {
+        dispatch(UsersActions.fetchMe.request(token));
+    }
+  })
+
+export default connect(mapStateToProps, mapDispatchToProps)(SelectedDisplay);

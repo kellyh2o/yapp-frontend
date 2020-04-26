@@ -46,13 +46,21 @@ const LoginPage = (props) => {
                                 <Button 
                                     variant="contained" 
                                     color="primary"
+                                    disabled={username === "" || password === ""}
                                     onClick={() => {
                                         props.login(username, password);
                                     }}
                                     style={{width: "300px", margin: "10px"}}>
                                 Log In
                                 </Button>
-
+                                {props.loginFailure ? (
+                                    <Box style={{paddingTop: "20px"}}>
+                                        <Typography color="error" align="center">
+                                            {props.loginErrorMessage}
+                                        </Typography>
+                                    </Box>
+                                ) : <div />
+                                }
                             </form>
                         </Box>
                         <Box style={{padding: "20px", margin: "20px", border: "1px lightgrey solid", borderRadius: "5px", textAlign: "center"}}>
@@ -75,7 +83,9 @@ const LoginPage = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        isLoggedIn: state.isLoggedIn
+        isLoggedIn: state.isLoggedIn,
+        loginErrorMessage: state.loginErrorMessage,
+        loginFailure: state.loginErrorMessage !== null
     };
 }
 

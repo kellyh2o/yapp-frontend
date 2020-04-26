@@ -36,6 +36,15 @@ const rootReducer = (state, action) => {
         ...state,
         isLoggedIn: true,
         token: action.payload.accessToken,
+        loginErrorMessage: null,
+      }
+    }
+
+    case getType(AuthActions.loginUser.failure): {
+      return {
+        ...state,
+        isLoggedIn: false,
+        loginErrorMessage: action.payload.response.data.msg
       }
     }
 

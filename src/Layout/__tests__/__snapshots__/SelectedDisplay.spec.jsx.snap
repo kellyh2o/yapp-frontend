@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectedDisplay should render 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
+      style="margin-bottom: 20px; padding: 20px;"
+    >
+      <h2
+        class="MuiTypography-root MuiTypography-h6 MuiTypography-colorPrimary MuiTypography-gutterBottom"
+      >
+        Location
+      </h2>
+      <p
+        class="MuiTypography-root MuiTypography-h4"
+        style="padding-top: 20px;"
+      >
+        Hogwarts
+      </p>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-8 MuiGrid-grid-lg-9"
+      >
+        <div
+          class="MuiPaper-root makeStyles-paper-1 makeStyles-fixedHeight-2 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <h2
+            class="MuiTypography-root MuiTypography-h6 MuiTypography-colorPrimary MuiTypography-gutterBottom"
+          >
+            Peak Times
+          </h2>
+          <div
+            class="recharts-responsive-container"
+            style="width: 100%; height: 100%;"
+          >
+            <div
+              style="position: absolute; width: 0px; height: 0px; visibility: hidden; display: none;"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-3"
+      >
+        <div
+          class="MuiPaper-root makeStyles-paper-1 makeStyles-fixedHeight-2 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <h2
+            class="MuiTypography-root MuiTypography-h6 MuiTypography-colorPrimary MuiTypography-gutterBottom"
+          >
+            Today's Most Popular Jump
+          </h2>
+          <p
+            class="MuiTypography-root MuiTypography-h4"
+            style="padding-top: 20px;"
+          >
+            Jump3
+          </p>
+          <p
+            class="MuiTypography-root makeStyles-depositContext-164 MuiTypography-body1 MuiTypography-colorTextSecondary"
+            style="padding-top: 20px; padding-left: 5px;"
+          >
+            1 Hits Today
+          </p>
+        </div>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+      >
+        <div
+          class="MuiPaper-root makeStyles-paper-1 MuiPaper-elevation1 MuiPaper-rounded"
+        >
+          <h2
+            class="MuiTypography-root MuiTypography-h6 MuiTypography-colorPrimary MuiTypography-gutterBottom"
+          >
+            Recent Jump Events
+          </h2>
+          <table
+            class="MuiTable-root"
+          >
+            <thead
+              class="MuiTableHead-root"
+            >
+              <tr
+                class="MuiTableRow-root MuiTableRow-head"
+              >
+                <th
+                  class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+                  scope="col"
+                >
+                  Date
+                </th>
+                <th
+                  class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+                  scope="col"
+                >
+                  Jump Name
+                </th>
+                <th
+                  class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+                  scope="col"
+                >
+                  Rider Mass (lbs) 
+                </th>
+                <th
+                  class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeSmall"
+                  scope="col"
+                >
+                  Rider Speed (mph) 
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              class="MuiTableBody-root"
+            >
+              <tr
+                class="MuiTableRow-root"
+              >
+                <td
+                  class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+                >
+                  Invalid date
+                </td>
+                <td
+                  class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+                >
+                  Jump3
+                </td>
+                <td
+                  class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+                >
+                  22
+                </td>
+                <td
+                  class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+                >
+                  12
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

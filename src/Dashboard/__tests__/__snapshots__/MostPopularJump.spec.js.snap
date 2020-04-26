@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MostPopularJump should render 1`] = `
+<DocumentFragment>
+  <h2
+    class="MuiTypography-root MuiTypography-h6 MuiTypography-colorPrimary MuiTypography-gutterBottom"
+  >
+    Today's Most Popular Jump
+  </h2>
+  <p
+    class="MuiTypography-root MuiTypography-h4"
+    style="padding-top: 20px;"
+  >
+    Jump3
+  </p>
+  <p
+    class="MuiTypography-root makeStyles-depositContext-1 MuiTypography-body1 MuiTypography-colorTextSecondary"
+    style="padding-top: 20px; padding-left: 5px;"
+  >
+    1 Hits Today
+  </p>
+</DocumentFragment>
+`;

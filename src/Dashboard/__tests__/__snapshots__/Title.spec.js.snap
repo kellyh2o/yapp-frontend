@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title should render 1`] = `
+<DocumentFragment>
+  <h2
+    class="MuiTypography-root MuiTypography-h6 MuiTypography-colorPrimary MuiTypography-gutterBottom"
+  />
+</DocumentFragment>
+`;

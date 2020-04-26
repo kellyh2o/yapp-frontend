@@ -27,9 +27,19 @@ const rootReducer = (state, action) => {
       return {
         ...state,
         isNewRegistrationSuccess: true,
-        showLoginPage: true 
+        showLoginPage: true,
+        registerErrorMessage: null
       }
     }
+
+    case getType(AuthActions.registerUser.failure): {
+      return {
+        ...state,
+        isNewRegistrationSuccess: false,
+        registerErrorMessage: action.payload.response.data.msg
+      }
+    }
+
 
     case getType(AuthActions.loginUser.success): {
       return {

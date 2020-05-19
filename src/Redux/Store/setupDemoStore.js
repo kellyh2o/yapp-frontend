@@ -27,7 +27,7 @@ export function setupDemoStore(dispatch, token) {
 }
 
 async function setupLocations(dispatch, token, data) {
-    let filteredLocations = data.filter(location => location.name === "Regis Mountain Bike Park");
+    let filteredLocations = data.filter(location => location.name === "Post Canyon");
 
     if (filteredLocations.length !== 0) {
         for (var i = 0; i < filteredLocations.length; i++) {            
@@ -57,7 +57,7 @@ async function setupLocations(dispatch, token, data) {
         },
         "data": JSON.stringify(
             { 
-                "name": "Regis Mountain Bike Park",
+                "name": "Post Canyon",
                 "jumps": [
                     {
                         "name": "Dropout",

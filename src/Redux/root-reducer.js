@@ -5,7 +5,7 @@ import { UsersActions } from '../Users/Store';
 import { getType } from 'typesafe-actions';
  
 
-const demoLocationName = "Regis Mountain Bike Park";
+const demoLocationName = "Post Canyon";
 
 const rootReducer = (state, action) => {
   switch(action.type) {    
